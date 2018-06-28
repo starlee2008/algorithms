@@ -1,14 +1,6 @@
-#include <fstream>
-#include <string>
-#include <cstring>
-#include <iostream>
-#include <algorithm>
-#include "header/Frq.h"
-#include "header/Hello.h"
-#include "header/Pratice.h"
-#include "header/Test.h"
 
 
+/*
 int main()
 {
     Hello * hello;
@@ -80,3 +72,4 @@ int main()
     hello->A1015();
 
 }
+*/
