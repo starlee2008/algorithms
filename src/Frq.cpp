@@ -2,8 +2,8 @@
 // Created by starlee on 2018/5/14.
 //
 #include "../header/Frq.h"
-void Frq::QuickSum() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm2812() {
+    ifstream cin("../resources/acm2812.txt");
     char ch[256];
     int sum = 0;
     while (cin.getline(ch, 256)) {
@@ -16,8 +16,8 @@ void Frq::QuickSum() {
 
     }
 }
-void Frq::IbmMinusOne() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm1240() {
+    ifstream cin("../resources/acm1240.txt");
     int n;
     string s;
     cin >> n;
@@ -31,8 +31,8 @@ void Frq::IbmMinusOne() {
         cout << endl;
     }
 }
-void Frq::ibmMinusOne() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm1240x() {
+    ifstream cin("../resources/acm1240.txt");
     const string str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int n;
     string s;
@@ -49,8 +49,8 @@ void Frq::ibmMinusOne() {
 
     }
 }
-void Frq::BinaryNum() {
-    ifstream cin("../src/aaa.txt");
+void Frq::amc1383() {
+    ifstream cin("../resources/acm1383.txt");
     vector<int> v;
     int n, a;
     cin >> n;
@@ -75,8 +75,8 @@ void Frq::BinaryNum() {
 
     }
 }
-void Frq::Encoding() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm2478() {
+    ifstream cin("../resources/acm2478.txt");
     string s, t;
     int n;
     cin >> n;
@@ -109,8 +109,8 @@ void Frq::Encoding() {
         s = "";
     }
 }
-void Frq::encoding() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm2478x() {
+    ifstream cin("../resources/acm2478.txt");
     int n;
     int count = 1;
     string s;
@@ -133,8 +133,8 @@ void Frq::encoding() {
     }
 
 }
-void Frq::lookAndSay() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm2886() {
+    ifstream cin("../resources/acm2886.txt");
     int n;
     int count = 1;
     string s;
@@ -153,8 +153,8 @@ void Frq::lookAndSay() {
 
     }
 }
-void Frq::abbreviation() {
-    ifstream cin("../src/aaa.txt");
+void Frq::acm2947() {
+    ifstream cin("../resources/acm2947.txt");
     int n, count1, count2;
     string s1, s2;
     string ss1, ss2;
@@ -180,7 +180,7 @@ void Frq::abbreviation() {
     }
 }
 void Frq::acm2932() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm2932.txt");
     string s;
     char ss[100];
     while (cin.getline(ss, 100)) {
@@ -202,7 +202,7 @@ void Frq::acm2932() {
 
 }
 void Frq::acm1251() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1251.txt");
     int n = 0, num, sum = 0, count = 0, move_count = 0;
 
 
@@ -233,7 +233,7 @@ void Frq::acm1251() {
 
 }
 void Frq::acm1241() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1241.txt");
     int a, b, c, n = 0;
     cout.precision(3);
     while (cin >> a >> b >> c) {
@@ -328,7 +328,7 @@ void Frq::testAcm() {
 
 }
 void Frq::acm1295() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resouces/acm1295.txt.txt");
     int n;
     cin>>n;
     cin.get();
@@ -359,7 +359,7 @@ void Frq::acm1295() {
      */
 }
 void Frq::acm1763() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resouces/acm1763.txt");
     double a,b;
     cin>>a;
     while(true){
@@ -372,7 +372,7 @@ void Frq::acm1763() {
 
 }
 void Frq::acm2001() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm2001.txt");
     string sa,sb,st;
     vector<int> v;
     int a,b,sum;
@@ -429,7 +429,7 @@ void Frq::acm2001() {
     }
 }
 void Frq::acm2001x() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm2001.txt");
     string sa,sb,st;
     char* s1,*s2;
     int a,b;

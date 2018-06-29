@@ -1,11 +1,17 @@
 
 
-/*
+
+#include "header/Hello.h"
+#include "header/Pratice.h"
+#include "header/Test.h"
+#include "header/Frq.h"
+
 int main()
 {
     Hello * hello;
     Pratice *p;
     Test *test;
+    Frq *frq;
 
     //hello->greedy1();
     //hello->hash1();
@@ -69,7 +75,7 @@ int main()
     //hello->A1071();
     //hello->B1007();
     //hello->B1013();
-    hello->A1015();
+    //hello->A1015();
+    frq->acm2812();
 
 }
-*/

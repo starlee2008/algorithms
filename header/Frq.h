@@ -17,14 +17,14 @@ using namespace std;
 
 class Frq {
 public:
-    void QuickSum();
-    void IbmMinusOne();
-    void ibmMinusOne();
-    void BinaryNum();
-    void Encoding();
-    void encoding();
-    void lookAndSay();
-    void abbreviation();
+    void acm2812();
+    void acm1240();
+    void acm1240x();
+    void amc1383();
+    void acm2478();
+    void acm2478x();
+    void acm2886();
+    void acm2947();
     void acm2932();
     void acm1251();
     void acm1241();

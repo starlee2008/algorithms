@@ -1,9 +1,12 @@
 //
 // Created by starlee on 2018/6/28.
 //
+/*
 #include <fstream>
 #include <cstdio>
 #include <queue>
+#include <iostream>
+
 using  namespace std;
 const int maxn=100;
 struct node{
@@ -44,7 +47,7 @@ void BFS(int x,int y){
 }
 int main(){
     ifstream cin("../resources/bfs.txt");
-    int n,m;
+
     cin>>n>>m;
     for(int x=0;x<n;x++){
         for(int y=0;y<m;y++){
@@ -56,6 +59,7 @@ int main(){
         for(int y=0;y<m;y++){
             if(matritx[x][y]==1&&inq[x][y]==false){
                 ans++;
+                cout<<x<<" "<<y<<endl;
                 BFS(x,y);
             }
         }
@@ -63,3 +67,4 @@ int main(){
     printf("%d\n",ans);
 
 }
+ */
