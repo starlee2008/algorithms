@@ -5,36 +5,11 @@
 #include <map>
 #include "../header/Hello.h"
 #include "../header/Poly.h"
-void Hello::test1() {
-    ifstream cin("../src/1.txt");
-    int n,num,m;
-    cin>>n;
-    int a[n];
 
-    for(int i=0;i<n;i++){
 
-        cin>>num;
-        a[i]=num;
-    }
-    cin>>m;
-    for(int k1=0;k1<n;k1++){
-        for(int k2=0;k2<n;k2++)
-            for(int k3=0;k3<n;k3++)
-                for(int k4=0;k4<n;k4++)
-                    if(a[k1]+a[k2]+a[k3]+a[k4]==m)
-                        cout<<a[k1]<<a[k2]<<a[k3]<<a[k4]<<endl;
-    }
-}
-void Hello::test2() {
-    ifstream cin("../src/1.txt");
-    int n,num,m;
-    cin>>n;
-    int a[n];
-
-}
-void Hello::greedy1() {
+void Hello::B1023() {
     string result;
-    ifstream cin("../src/1.txt");
+    ifstream cin("../resources/B1023.txt");
     int count[10];
     for(int i=0;i<10;i++){
         cin>>count[i];
@@ -53,22 +28,7 @@ void Hello::greedy1() {
     }
 
 }
-void Hello::hash1() {
-    ifstream cin("../src/1.txt");
-    char sa[100],sb[100];
-    bool HashTable[128];
-    cin.getline(sa,100);
-    cin.getline(sb,100);
 
-    for(int i=0;i<strlen(sb);i++){
-        HashTable[sb[i]]=true;
-    }
-    for(int j=0;j<strlen(sa);j++){
-        if(HashTable[sa[j]]==false){
-            cout<<sa[j];
-        }
-    }
-}
 void Hello::B1001() {
     ifstream cin("../src/1.txt");
     int n,count=0;
@@ -769,15 +729,7 @@ void Hello::A1048() {
 void Hello::A1048x() {
 
 }
-void Hello::B1023() {
-    ifstream cin("../resources/B1023.txt");
-    int count[10];
-    for(int i=0;i<10;i++){
-        cin>>count[i];
 
-    }
-
-}
 bool cmpmooncake(Mooncake a,Mooncake b){
     return a.price>b.price;
 }

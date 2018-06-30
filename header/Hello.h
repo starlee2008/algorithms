@@ -18,10 +18,8 @@ using namespace std;
 
 class Hello {
 public:
-    void test1();
-    void test2();
-    void greedy1();
-    void hash1();
+
+    void B1023();
     void B1001();
     void B1003();
     void B1007();
@@ -55,7 +53,6 @@ public:
     void A1041();
     void A1050();
     void A1048();
-    void B1023();
     void B1020();
     void A1029();
     void A1048x();

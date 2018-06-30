@@ -18,11 +18,12 @@ using  namespace std;
 
 class Pratice {
 public:
+    void test1();
     void bubbleSort();
     void C1928();
     void C5901();
     void B1009();
-    int binarySearch(int arr[],int x);
+    int  binarySearch(int arr[],int x);
     void sloveRoot();
     void B1040();
     void binaryPow(long a,long b,long m);
@@ -33,6 +34,7 @@ public:
     void A1032();
     void A1052();
     void A1059();
+    void hashTest();
 
 
 

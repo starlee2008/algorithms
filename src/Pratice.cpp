@@ -12,7 +12,42 @@ int length(T& data)
 {
     return sizeof(data)/sizeof(data[0]);
 }
+void Pratice::test1() {
+    ifstream cin("../src/1.txt");
+    int n,num,m;
+    cin>>n;
+    int a[n];
 
+    for(int i=0;i<n;i++){
+
+        cin>>num;
+        a[i]=num;
+    }
+    cin>>m;
+    for(int k1=0;k1<n;k1++){
+        for(int k2=0;k2<n;k2++)
+            for(int k3=0;k3<n;k3++)
+                for(int k4=0;k4<n;k4++)
+                    if(a[k1]+a[k2]+a[k3]+a[k4]==m)
+                        cout<<a[k1]<<a[k2]<<a[k3]<<a[k4]<<endl;
+    }
+}
+void Pratice::hashTest() {
+    ifstream cin("../resources/hash1.txt");
+    char sa[100],sb[100];
+    bool HashTable[128];
+    cin.getline(sa,100);
+    cin.getline(sb,100);
+
+    for(int i=0;i<strlen(sb);i++){
+        HashTable[sb[i]]=true;
+    }
+    for(int j=0;j<strlen(sa);j++){
+        if(HashTable[sa[j]]==false){
+            cout<<sa[j]<<" ";
+        }
+    }
+}
 void Pratice::bubbleSort() {
     int a[5]={3,1,4,5,2};
     for(int i=0;i<5;i++){

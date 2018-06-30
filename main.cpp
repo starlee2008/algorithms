@@ -9,8 +9,7 @@ int main()
     Pratice *p;
     Test *test;
     Frq *frq;
-    //hello->greedy1();
-    //hello->hash1();
+    //hello->B1023();
     //hello->B1001();
     //hello->B1011();
     //hello->B1016();
@@ -74,7 +73,8 @@ int main()
     //hello->A1015();
     //frq->acm2812();
     //hello->A1020();
-    hello->A1086();
+    //hello->A1086();
+    p->hashTest();
 
 
 
