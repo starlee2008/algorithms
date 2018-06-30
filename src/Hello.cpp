@@ -1,10 +1,9 @@
 //
 // Created by starlee on 2018/5/21.
 //
-#include <set>
-#include <map>
+
 #include "../header/Hello.h"
-#include "../header/Poly.h"
+#include "../header/common.h"
 
 
 void Hello::B1023() {

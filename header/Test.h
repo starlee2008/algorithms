@@ -15,7 +15,7 @@
 #include <fstream>
 #include <cmath>
 #include <set>
-#include "Poly.h"
+
 
 using namespace std;
 

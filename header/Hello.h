@@ -10,6 +10,10 @@
 #include <stack>
 #include <queue>
 #include "Fraction.h"
+#include <set>
+#include <map>
+
+
 
 #ifndef ALGO_Hello_H
 #define ALGO_Hello_H

@@ -70,9 +70,4 @@ int  main() {
     cout << step << endl;
 
 }
-
-
 */
-
-
-

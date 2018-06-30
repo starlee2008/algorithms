@@ -12,6 +12,7 @@
 #include <cstring>
 #include <algorithm>
 using namespace std;
+
 struct Poly{
     int exp;
     double cof;

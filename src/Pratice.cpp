@@ -1,11 +1,7 @@
 //
 // Created by starlee on 2018/6/6.
 //
-
-
-#include <map>
 #include "../header/Pratice.h"
-#include "../header/Poly.h"
 
 template<class T>
 int length(T& data)

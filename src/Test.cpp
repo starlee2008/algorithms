@@ -2,6 +2,8 @@
 // Created by starlee on 2018/5/3.
 //
 #include "../header/Test.h"
+#include "../Header/common.h"
+
 void Test::firstRun() {
     {
         int i=1;
