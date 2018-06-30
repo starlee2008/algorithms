@@ -1256,3 +1256,53 @@ void Hello::A1015() {
         }
     }while (n!=EOF);
 }
+BNode* create(int post[],int in[],int postL,int postR,int inL,int inR){
+    if(postL>postR)
+        return NULL;
+    BNode* root=new BNode;
+    root->data=post[postR];
+    int k;
+    for(k=inL;k<=inR;k++){
+        if(in[k]==post[postR]){
+            break;
+        }
+    }
+    int numLeft=k-inL;
+    root->lchild=create(post,in,postL,postL+numLeft-1,inL,k-1);
+    root->rchild=create(post,in,postL+numLeft,postR-1,k+1,inR);
+    return root;
+}
+int BFS(BNode* root,int n){
+    int num=0;
+    queue<BNode*> q;
+    q.push(root);
+    while(!q.empty()){
+        BNode* now=q.front();
+        q.pop();
+        printf("%d",now->data);
+        num++;
+        if(num<n)
+            printf(" ");
+        if(now->lchild!=NULL)
+            q.push(now->lchild);
+        if(now->rchild!=NULL)
+            q.push(now->rchild);
+    }
+
+}
+void Hello::A1020() {
+    ifstream cin("../resources/A1020.txt");
+    const int maxn=50;
+    int pre[maxn],in[maxn],post[maxn];
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>post[i];
+    }
+    for(int i=0;i<n;i++){
+        cin>>in[i];
+    }
+    BNode* root=create(post,in,0,n-1,0,n-1);
+    BFS(root,n);
+
+}

@@ -74,3 +74,8 @@ struct ANode{
     int address,data,next;
     int order;
 };
+struct BNode{
+    int data;
+    BNode *lchild;
+    BNode *rchild;
+};
