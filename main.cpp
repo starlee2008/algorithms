@@ -1,8 +1,5 @@
-#include "header/Hello.h"
-#include "header/Pratice.h"
-#include "header/Test.h"
-#include "header/Frq.h"
 
+/*
 int main()
 {
     Hello * hello;
@@ -79,3 +76,4 @@ int main()
 
 
 }
+*/

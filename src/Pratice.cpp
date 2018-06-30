@@ -287,6 +287,7 @@ bool cmpSNode(SSNode a,SSNode b){
         return a.data<b.data;
     }
 }
+
 void Pratice::A1052() {
     ifstream cin("../resources/A1052.txt");
     const int maxn=100005;
@@ -321,6 +322,6 @@ void Pratice::A1052() {
 
     }
 }
-void Pratice::A1059(){
 
-}
+
+

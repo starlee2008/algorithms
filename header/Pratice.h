@@ -35,8 +35,8 @@ public:
     void C1818();
     void A1032();
     void A1052();
-    void A1059();
     void hashTest();
+
 
 
 
