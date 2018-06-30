@@ -1261,6 +1261,7 @@ BNode* create(int post[],int in[],int postL,int postR,int inL,int inR){
         return NULL;
     BNode* root=new BNode;
     root->data=post[postR];
+    //printf("root %d\n",root->data);
     int k;
     for(k=inL;k<=inR;k++){
         if(in[k]==post[postR]){
@@ -1268,7 +1269,9 @@ BNode* create(int post[],int in[],int postL,int postR,int inL,int inR){
         }
     }
     int numLeft=k-inL;
+
     root->lchild=create(post,in,postL,postL+numLeft-1,inL,k-1);
+
     root->rchild=create(post,in,postL+numLeft,postR-1,k+1,inR);
     return root;
 }
@@ -1304,5 +1307,58 @@ void Hello::A1020() {
     }
     BNode* root=create(post,in,0,n-1,0,n-1);
     BFS(root,n);
+
+}
+BNode* createx(int pre[],int in[],int preL,int preR,int inL,int inR){
+    if(preL>preR)
+        return NULL;
+    BNode* root=new BNode;
+    root->data=pre[preL];
+    //printf("root %d\n",root->data);
+    int k;
+    for(k=inL;k<=inR;k++){
+        if(in[k]==pre[preL]){
+            break;
+        }
+    }
+    int numLeft=k-inL;
+
+    root->lchild=create(pre,in,preL+1,preL+numLeft,inL,k-1);
+
+    root->rchild=create(pre,in,preL+numLeft+1,preR,k+1,inR);
+    return root;
+}
+void postOrder(BNode* root,int n){
+    int num=0;
+    if(root==NULL)
+        return;
+    postOrder(root->lchild,n);
+    postOrder(root->rchild,n);
+    printf("%d",root->data);
+    num++;
+    if(num<n) printf(" ");
+}
+void Hello::A1086() {
+    ifstream cin("../resources/A1086.txt");
+    const int maxn=50;
+    int pre[maxn],in[maxn],post[maxn];
+    int n;
+    cin>>n;
+    stack<int> st;
+    char str[5];
+    int x,preIndex=0,inIndex=0;
+    for(int i=0;i<2*n;i++){
+        cin>>str;
+        if(strcmp(str,"Push")==0){
+            cin>>x;
+            pre[preIndex++]=x;
+            st.push(x);
+        }else{
+            in[inIndex++]=st.top();
+            st.pop();
+        }
+    }
+    BNode* root=createx(pre,in,0,n-1,0,n-1);
+    postOrder(root,n);
 
 }

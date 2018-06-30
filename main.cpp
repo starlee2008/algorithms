@@ -73,7 +73,8 @@ int main()
     //hello->B1013();
     //hello->A1015();
     //frq->acm2812();
-    hello->A1020();
+    //hello->A1020();
+    hello->A1086();
 
 
 

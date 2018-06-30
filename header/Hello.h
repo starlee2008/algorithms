@@ -75,6 +75,7 @@ public:
     void B1013();
     void A1015();
     void A1020();
+    void A1086();
 
 };
 
