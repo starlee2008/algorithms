@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <vector>
 #include <fstream>
+
 using namespace std;
 struct node{
     int data;
@@ -53,6 +54,7 @@ void postOrderMirror(node *root,vector<int>&vi){
     vi.push_back(root->data);
 }
 vector<int> origin,pre,preM,post,postM;
+/*
 int main(){
     ifstream cin("../resources/A1043.txt");
     int n,data;
@@ -83,3 +85,4 @@ int main(){
         printf("NO\n");
     }
 }
+ */
