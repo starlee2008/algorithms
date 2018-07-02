@@ -1,5 +1,10 @@
-
 /*
+
+#include "header/Hello.h"
+#include "header/Pratice.h"
+#include "header/Test.h"
+#include "header/Frq.h"
+
 int main()
 {
     Hello * hello;
@@ -71,7 +76,8 @@ int main()
     //frq->acm2812();
     //hello->A1020();
     //hello->A1086();
-    p->hashTest();
+    //p->hashTest();
+    hello->A1090();
 
 
 
