@@ -1,7 +1,7 @@
 //
 // Created by starlee on 2018/6/21.
 //
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 struct node{
@@ -65,6 +65,7 @@ void del(node *head,int x){
     }
 
 }
+/*
 int main(){
     int arr[5]={5,3,6,1,2};
     node* L=create(arr);

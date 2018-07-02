@@ -35,11 +35,27 @@ bignum add(bignum a,bignum b){
     return c;
 
 }
+bignum sub(bignum a,bignum b){
+    bignum c;
+    for(int i=0;i<a.len||i<b.len;i++){
+        if(a.d[i]<b.d[i]){
+            a.d[i+1]--;
+            a.d[i]+=10;
+        }
+        c.d[c.len++]=a.d[i]-b.d[i];
+        while (c.len-1>=1&&c.d[c.len-1]==0){
+            c.len--;
+        }
+
+    }
+    return c;
+}
 void print(bignum a){
     for(int i=a.len-1;i>=0;i--){
         printf("%d",a.d[i]);
     }
 }
+/*
 int main(){
 
     char str1[1000],str2[1000];
@@ -47,6 +63,9 @@ int main(){
     cin>>str1>>str2;
     bignum a=change(str1);
     bignum b=change(str2);
+    print(sub(a,b));
+    printf("\n");
     print(add(a,b));
 
 }
+ */

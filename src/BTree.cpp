@@ -1,9 +1,6 @@
-/*
 #include <cstdio>
 #include <fstream>
-#include <iostream>
 
-#include <iostream>
 using namespace std;
 struct node{
     char data;
@@ -61,6 +58,7 @@ void intOrder(node *root){
     preOrder(root->rchild);
 
 }
+/*
 int main(){
     char data[]={'A','B','D','E','F','C'};
     node* node1=create(data,6);

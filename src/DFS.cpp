@@ -5,13 +5,14 @@
 #include <cstdio>
 #include <fstream>
 #include <iostream>
-
 #include <iostream>
 using namespace std;
 
 const int maxn=30;
 int n,V,maxValue=0;//背包容量
 int w[maxn],c[maxn];
+
+
 void DFS(int index, int sumW, int sumC){
     cout<<index<<" "<<sumW<<" "<<sumC<<" "<<endl;
     if(index==n){
@@ -24,6 +25,8 @@ void DFS(int index, int sumW, int sumC){
 
     DFS(index+1,sumW+w[index],sumC+c[index]);
 }
+
+
 int main(){
     ifstream cin("../resources/dfs.txt");
     cin>>n>>V;

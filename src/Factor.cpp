@@ -1,9 +1,8 @@
 //
 // Created by starlee on 2018/6/30.
 //
-/*
+
 #include <cmath>
-#include <fstream>
 
 using namespace std;
 struct factor{
@@ -30,6 +29,7 @@ void find_prime(){
         }
     }
 }
+/*
 int main(){
     factor fac[10];
     ifstream cin("../resources/fac.txt");

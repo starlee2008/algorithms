@@ -1,16 +1,11 @@
 //
 // Created by starlee on 2018/6/20.
 //
-/*
+
 #include <string>
-#include <cstring>
-#include <iostream>
-#include <vector>
-#include<iterator>
 #include <stack>
 #include <queue>
 #include <map>
-#include <fstream>
 
 using  namespace std;
 
@@ -81,6 +76,7 @@ double Calculate(){
     return s.top().num;
 
 }
+/*
 int main() {
     ifstream cin("../resources/C1918.txt");
 

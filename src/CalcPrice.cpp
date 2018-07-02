@@ -1,13 +1,10 @@
 //
 // Created by starlee on 2018/7/2.
 //
-/*
+
 #include <fstream>
-#include <cstdio>
 #include <queue>
-#include <iostream>
-#include <vector>
-#include <cmath>
+
 using namespace std;
 
 const int maxn=1000;
@@ -30,6 +27,7 @@ void DFS(int index,int depth){
     return;
 
 }
+/*
 int main() {
     ifstream cin("../resources/A1090.txt");
     int n;

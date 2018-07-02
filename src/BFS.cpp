@@ -1,12 +1,8 @@
 //
 // Created by starlee on 2018/6/28.
 //
-/*
-#include <fstream>
-#include <cstdio>
-#include <queue>
-#include <iostream>
 
+/*
 using  namespace std;
 const int maxn=100;
 struct node{
@@ -45,6 +41,7 @@ void BFS(int x,int y){
         }
     }
 }
+
 int main(){
     ifstream cin("../resources/bfs.txt");
 
