@@ -1,7 +1,7 @@
 //
 // Created by starlee on 2018/6/29.
 //
-
+/*
 #include <fstream>
 #include <queue>
 using namespace std;
@@ -51,7 +51,7 @@ int BFS() {
     return -1;
 
 }
-/*
+
 int  main() {
     ifstream cin("../resources/maze.txt");
     cin >> n >> m;

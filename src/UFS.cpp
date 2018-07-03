@@ -2,7 +2,7 @@
 // Created by starlee on 2018/7/2.
 //
 #include <cstdio>
-#include <fstream>
+
 using namespace std;
 const int N=110;
 int father[N];
@@ -27,6 +27,7 @@ void init(int n){
         isRoot[i]=false;
     }
 }
+/*
 int main(){
     ifstream cin("../resources/ufs.txt");
     int n,m,a,b;
@@ -46,3 +47,4 @@ int main(){
     }
     printf("%d\n",ans);
 }
+ */
