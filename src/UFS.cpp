@@ -1,6 +1,7 @@
 //
 // Created by starlee on 2018/7/2.
 //
+/*
 #include <cstdio>
 
 using namespace std;
@@ -27,7 +28,7 @@ void init(int n){
         isRoot[i]=false;
     }
 }
-/*
+
 int main(){
     ifstream cin("../resources/ufs.txt");
     int n,m,a,b;
