@@ -322,3 +322,6 @@ void Pratice::A1052() {
 
     }
 }
+void Pratice::A1025() {
+    //not
+}

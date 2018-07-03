@@ -15,11 +15,7 @@
 #include <fstream>
 #include <cmath>
 #include <set>
-
-
 using namespace std;
-
-
 class Test {
 public:
     void firstRun() ;
@@ -49,6 +45,5 @@ public:
     void testAcm1309();
 
 };
-
 
 #endif //ALGO_TEST_H

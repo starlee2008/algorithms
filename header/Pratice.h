@@ -17,7 +17,6 @@ using  namespace std;
 #ifndef ALGO_PRATICE_H
 #define ALGO_PRATICE_H
 
-
 class Pratice {
 public:
     void test1();
@@ -36,9 +35,7 @@ public:
     void A1032();
     void A1052();
     void hashTest();
-
-
-
+    void A1025();
 
 };
 

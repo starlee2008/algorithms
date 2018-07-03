@@ -13,11 +13,8 @@
 #include <set>
 #include <map>
 
-
-
 #ifndef ALGO_Hello_H
 #define ALGO_Hello_H
-
 using namespace std;
 
 class Hello {
@@ -77,6 +74,9 @@ public:
     void A1015();
     void A1020();
     void A1086();
+    void C1934();
+
+    void B1009();
 
 
 };

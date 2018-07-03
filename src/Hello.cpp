@@ -6,6 +6,26 @@
 #include "../header/common.h"
 
 
+void Hello::C1934() {
+    ifstream cin("../resources/C1934.txt");
+    const int maxn=210;
+    int a[maxn];
+    int n,x;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cin>>x;
+    int k;
+    for(k=0;k<n;k++){
+        if(a[k]==x){
+            printf("%d\n",k);
+            break;
+        }
+    }
+
+
+}
 void Hello::B1023() {
     string result;
     ifstream cin("../resources/B1023.txt");
@@ -29,7 +49,7 @@ void Hello::B1023() {
 }
 
 void Hello::B1001() {
-    ifstream cin("../src/1.txt");
+    ifstream cin("../resources/B1001.txt");
     int n,count=0;
     cin>>n;
     while(n!=1){
@@ -1314,3 +1334,6 @@ void Hello::A1086() {
 
 }
 
+void Hello::B1009() {
+    //not finished
+}

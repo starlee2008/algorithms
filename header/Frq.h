@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 class Frq {
 public:
     void acm2812();
@@ -35,6 +34,5 @@ public:
     void acm2001();
     void acm2001x();
 };
-
 
 #endif //ALGO_FRQ_H
