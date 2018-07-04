@@ -410,7 +410,9 @@ int partition(int A[],int left,int right){
             left++;
         }
         A[right]=A[left];
+
     }
+
     A[left]=temp;
 
     return left;
@@ -450,4 +452,26 @@ void Pratice::queueTest() {
 }
 void Pratice::A1053() {
     //page 305
+}
+void Pratice::randNumber() {
+    srand((unsigned)time(NULL));
+    for(int i=0;i<10;i++){
+        printf("%d ",rand());
+    }
+}
+void Pratice::Josephus() {
+    ifstream cin("../resources/josephus.txt");
+    int n,k;
+    vector<int> a;
+    cin>>n>>k;
+    int x=0;
+    for(int i=0;i<n;i++){
+        a.push_back(i+1);
+    }
+    while(a.size()){
+        x=(x+k-1)%a.size();
+        printf("%d ",a[x]);
+        a.erase(a.begin()+x);
+    }
+
 }

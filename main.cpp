@@ -80,8 +80,10 @@ int main()
     //p->hashTest();
     //p->hashTest1();
     //p->factorial();
-    p->mSort();
-    printf("\n");
-    p->qSort();
+    //p->mSort();
+    //printf("\n");
+    //p->qSort();
+    //p->randNumber();
+    p->Josephus();
 
 }

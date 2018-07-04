@@ -11,6 +11,7 @@
 #include <stack>
 #include <queue>
 #include <map>
+#include <ctime>
 #include "../header/common.h"
 using  namespace std;
 
@@ -47,6 +48,8 @@ public:
     void qSort();
     void randSelect();
     void A1053();
+    void randNumber();
+    void Josephus();
 
 };
 
