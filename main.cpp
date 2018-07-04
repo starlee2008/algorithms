@@ -13,7 +13,7 @@ int main()
 
     //hello->B1023();
     //hello->B1001();
-    hello->C1934();
+    //hello->C1934();
     //hello->B1011();
     //hello->B1016();
     //hello->B1046();
@@ -78,6 +78,10 @@ int main()
     //hello->A1020();
     //hello->A1086();
     //p->hashTest();
-    p->hashTest1();
+    //p->hashTest1();
+    //p->factorial();
+    p->mSort();
+    printf("\n");
+    p->qSort();
 
 }

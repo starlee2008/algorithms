@@ -352,11 +352,83 @@ void Pratice::hashTest1() {
         printf("%d\n",hashTable[id]);
     }
 }
+int F(int n){
+    if(n==0)
+        return 1;
+    else
+        return F(n-1)*n;
+}
 void Pratice::factorial() {
     //page 112
+    ifstream cin("../resources/factorial.txt");
+    int n;
+    cin>>n;
+    printf("%d\n",F(n));
+
 }
-void Pratice::mergeSort() {
-    //page 140
+void merge(int A[],int L1,int R1,int L2,int R2){
+    int i=L1,j=L2;
+    int temp[100],index=0;
+    while(i<=R1 && j<=R2){
+        if(A[i]<=A[j]){
+            temp[index++]=A[i++];
+        }else{
+            temp[index++]=A[j++];
+        }
+    }
+    while(i<=R1) temp[index++]=A[i++];
+    while(j<=R2) temp[index++]=A[j++];
+    for(int i=0;i<index;i++){
+        A[L1+i]=temp[i];
+    }
+
+}
+void mergeSort(int A[],int left,int right){
+    if(left<right){
+        int mid=(left+right)/2;
+        mergeSort(A,left,mid);
+        mergeSort(A,mid+1,right);
+        merge(A,left,mid,mid+1,right);
+    }
+
+}
+void Pratice::mSort() {
+    int A[]={66,12,33,57,64,27,18};
+    mergeSort(A,0,7);
+    for(int i=0;i<7;i++){
+        printf("%d ",A[i]);
+    }
+}
+int partition(int A[],int left,int right){
+    int temp=A[left];
+    while(left<right){
+        while(left<right&&A[right]>temp){
+            right--;
+        }
+        A[left]=A[right];
+        while(left<right&&A[left]<=temp){
+            left++;
+        }
+        A[right]=A[left];
+    }
+    A[left]=temp;
+
+    return left;
+}
+void quickSort(int A[],int left,int right){
+    if(left<right){
+        int pos=partition(A,left,right);
+        quickSort(A,left,pos-1);
+        quickSort(A,pos+1,right);
+    }
+}
+void Pratice::qSort() {
+    int A[]={35,18,16,72,24,65,12,88,46,28,55};
+    quickSort(A,0,11);
+    for(int i=0;i<11;i++){
+        printf("%d ",A[i]);
+    }
+
 }
 void Pratice::randSelect() {
     //page 150

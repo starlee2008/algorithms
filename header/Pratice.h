@@ -43,7 +43,8 @@ public:
     void hashTest1();
     void A1025();
     void factorial();
-    void mergeSort();
+    void mSort();
+    void qSort();
     void randSelect();
     void A1053();
 
