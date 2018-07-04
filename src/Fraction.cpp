@@ -1,8 +1,6 @@
 //
 // Created by starlee on 2018/6/27.
 //
-
-
 #include "../header/Fraction.h"
 Fraction Fraction::reduction(Fraction result) {
     if(result.down<0){

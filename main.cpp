@@ -84,6 +84,7 @@ int main()
     //printf("\n");
     //p->qSort();
     //p->randNumber();
-    p->Josephus();
+    //p->Josephus();
+    frq->acm2736();
 
 }

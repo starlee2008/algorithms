@@ -250,7 +250,6 @@ void Pratice::C1818() {
     cin>>m>>n;
     printf("%d\n",gcd(m,n));
 }
-
 void Pratice::A1032() {
     const int maxn=100010;
     ifstream cin("../resources/A1032.txt");
@@ -288,7 +287,6 @@ bool cmpSNode(SSNode a,SSNode b){
         return a.data<b.data;
     }
 }
-
 void Pratice::A1052() {
     ifstream cin("../resources/A1052.txt");
     const int maxn=100005;

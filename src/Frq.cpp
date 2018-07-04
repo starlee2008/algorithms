@@ -442,3 +442,20 @@ void Frq::acm2001x() {
         sprintf(strcpy(s2,sb.c_str()),"%d",b);
     }
 }
+void Frq::acm2736() {
+    ifstream cin("../resources/acm2736.txt");
+    int n;
+    int a,b,c;
+    while(cin>>n){
+        a=n/100;
+        b=(n-a*100)/10;
+        c=n%10;
+        if(n==a*a*a+b*b*b+c*c*c){
+            printf("YES\n");
+        }else{
+            printf("NO\n");
+        }
+    }
+
+
+}
