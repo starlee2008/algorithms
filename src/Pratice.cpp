@@ -244,6 +244,7 @@ int gcd(int a,int b){
     else return gcd(b,a%b);
 }
 void Pratice::C1818() {
+    //page 155
     ifstream cin("../resources/C1818.txt");
     int m,n;
     cin>>m>>n;
@@ -324,4 +325,57 @@ void Pratice::A1052() {
 }
 void Pratice::A1025() {
     //not
+}
+int hashFunc(char S[],int len){
+    int id=0;
+    for(int i=0;i<len;i++){
+        id=id*26+(S[i]-'A');
+    }
+    return id;
+}
+void Pratice::hashTest1() {
+    //not page 110
+    ifstream cin("../resources/hash2.txt");
+    const int maxn=100;
+    char S[maxn][5],temp[5];
+    int hashTable[26*26*26+10];
+    int n,m;
+    cin>>n>>m;
+    for(int i=0;i<n;i++){
+        cin>>S[i];
+        int id=hashFunc(S[i],3);
+        hashTable[id]++;
+    }
+    for(int i=0;i<m;i++){
+        cin>>temp;
+        int id=hashFunc(temp,3);
+        printf("%d\n",hashTable[id]);
+    }
+}
+void Pratice::factorial() {
+    //page 112
+}
+void Pratice::mergeSort() {
+    //page 140
+}
+void Pratice::randSelect() {
+    //page 150
+}
+void Pratice::vectorTest() {
+    //page 195
+}
+void Pratice::setTest() {
+    //page 200
+}
+void Pratice::stringTest() {
+    //page 205
+}
+void Pratice::mapTest() {
+    //page 214
+}
+void Pratice::queueTest() {
+    //page 220
+}
+void Pratice::A1053() {
+    //page 305
 }

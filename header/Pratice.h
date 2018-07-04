@@ -19,6 +19,11 @@ using  namespace std;
 
 class Pratice {
 public:
+    void vectorTest();
+    void setTest();
+    void stringTest();
+    void mapTest();
+    void queueTest();
     void test1();
     void bubbleSort();
     void C1928();
@@ -35,7 +40,12 @@ public:
     void A1032();
     void A1052();
     void hashTest();
+    void hashTest1();
     void A1025();
+    void factorial();
+    void mergeSort();
+    void randSelect();
+    void A1053();
 
 };
 

@@ -1,3 +1,4 @@
+
 #include "header/Hello.h"
 #include "header/Pratice.h"
 #include "header/Test.h"
@@ -77,5 +78,6 @@ int main()
     //hello->A1020();
     //hello->A1086();
     //p->hashTest();
+    p->hashTest1();
 
 }

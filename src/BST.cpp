@@ -1,6 +1,7 @@
 //
 // Created by starlee on 2018/7/2.
 //
+/*
 #include <cstdio>
 #include <vector>
 #include <fstream>
@@ -54,7 +55,7 @@ void postOrderMirror(node *root,vector<int>&vi){
     vi.push_back(root->data);
 }
 vector<int> origin,pre,preM,post,postM;
-/*
+
 int main(){
     ifstream cin("../resources/A1043.txt");
     int n,data;
