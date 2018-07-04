@@ -424,9 +424,9 @@ void Hello::A1006() {
     for(int i=0;i<n;i++){
         char ch;
         cin>>temp.name>>temp.hh>>ch>>temp.mm>>ch>>temp.ss;
-        if(great(temp,ans1)==false) ans1=temp;
+        if(!great(temp,ans1)) ans1=temp;
         cin>>temp.hh>>ch>>temp.mm>>ch>>temp.ss;
-        if(great(temp,ans2)==true) ans2=temp;
+        if(great(temp,ans2)) ans2=temp;
     }
     cout<<ans1.name<<" "<<ans2.name;
 }
@@ -507,7 +507,7 @@ void Hello::A1019() {
         n/=b;
     }while(n!=0);
     bool flag=Judge(z,num);
-    if(flag==true) cout<<"Yes"<<endl;
+    if(flag) cout<<"Yes"<<endl;
     else cout<<"No"<<endl;
     for(int i=num-1;i>=0;i--){
         cout<<z[i];
@@ -529,7 +529,7 @@ void Hello::B1029() {
             if(c2>='a'&&c2<='z') c2-=32;
             if(c1==c2) break;
         }
-        if(j==str2.size()&&HashTable[c1]==false){
+        if(j==str2.size()&&!HashTable[c1]){
             cout<<c1;
             HashTable[c1]= true;
         }
@@ -556,11 +556,11 @@ void Hello::B1033() {
         if(ch>='A'&&ch<='Z'){
 
             int low=ch-'A'+'a';
-            if(hashTable[low]==true&&hashTable['+']==true){
+            if(hashTable[low]&&hashTable['+']){
                 cout<<str2[i];
             }
 
-        }else if(hashTable[str2[i]]==true){
+        }else if(hashTable[str2[i]]){
             cout<<str2[i];
         }
     }
@@ -715,7 +715,7 @@ void Hello::A1050() {
         hashTable[b[i]]=true;
     }
     for(int i=0;i<lenA;i++){
-        if(hashTable[a[i]]== false){
+        if(!hashTable[a[i]]){
             printf("%c",a[i]);
         }
     }
@@ -946,7 +946,7 @@ void Hello::A1051() {
                 current++;
             }
         }
-        if(st.empty()==true&&flag==true){
+        if(st.empty()&&flag){
             printf("YES\n");
         }else{
             printf("NO\n");
@@ -1127,7 +1127,7 @@ void Hello::A1071() {
     int i=0;
     while(i<len){
         string word;
-        while(i<len&&check(str[i])==true){
+        while(i<len&&check(str[i])){
             if(str[i]>='A'&&str[i]<='Z'){
                 str[i]+=32;
             }
@@ -1140,7 +1140,7 @@ void Hello::A1071() {
             else
                 count[word]++;
         }
-        while(i<len&&check(str[i])==false){
+        while(i<len&&!check(str[i])){
             i++;
         }
     }
@@ -1167,7 +1167,7 @@ void Hello::B1007() {
     int n,count=0;
     cin>>n;
     for(int i=3;i+2<=n;i+=2){
-        if(isPrime(i)== true && isPrime(i+2)==true){
+        if(isPrime(i) && isPrime(i+2)){
             count++;
         }
     }
@@ -1184,7 +1184,7 @@ void Hello::B1013() {
 
     cin>>m>>n;
     for(int i=1;i<maxn;i++){
-        if(isPrime(i)==true){
+        if(isPrime(i)){
             prime[num++]=i;
             p[i]=true;
             if(num>=n) break;
@@ -1208,7 +1208,7 @@ void Hello::A1015() {
         cin>>n;
         if(n<0) break;
         cin>>radix;
-        if(isPrime(n)==false){
+        if(!isPrime(n)){
             printf("No\n");
         }else{
             int len=0;
@@ -1220,7 +1220,7 @@ void Hello::A1015() {
             for(int i=0;i<len;i++){
                 n=n*radix+d[i];
             }
-            if(isPrime(n)==true)
+            if(isPrime(n))
                 printf("Yes\n");
             else
                 printf("No\n");

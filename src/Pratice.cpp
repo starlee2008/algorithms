@@ -39,7 +39,7 @@ void Pratice::hashTest() {
         HashTable[sb[i]]=true;
     }
     for(int j=0;j<strlen(sa);j++){
-        if(HashTable[sa[j]]==false){
+        if(!HashTable[sa[j]]){
             cout<<sa[j]<<" ";
         }
     }
@@ -273,7 +273,7 @@ void Pratice::A1032() {
         node[p].flag=true;
     }
     for(p=s2;p!=-1;p=node[p].next){
-        if(node[p].flag==true) break;
+        if(node[p].flag) break;
     }
     if(p!=-1)
         printf("%05d\n",p);
@@ -282,7 +282,7 @@ void Pratice::A1032() {
 
 }
 bool cmpSNode(SSNode a,SSNode b){
-    if(a.flag== false||b.flag==false){
+    if(!a.flag||!b.flag){
         return a.flag>b.flag;
     }else{
         return a.data<b.data;
