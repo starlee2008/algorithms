@@ -473,3 +473,52 @@ void Pratice::Josephus() {
     }
 
 }
+void Pratice::shuta() {
+    ifstream cin("../resources/shuta.txt");
+    const int maxn=100;
+    int f[maxn][maxn],dp[maxn][maxn];
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cin>>f[i][j];
+        }
+    }
+    for(int j=1;j<=n;j++){
+        dp[n][j]=f[n][j];
+    }
+    for(int i=n-1;i>=1;i--){
+        for(int j=1;j<=i;j++){
+            int a=dp[i+1][j];
+            int b=dp[i+1][j+1];
+            int temp=max(dp[i+1][j],dp[i+1][j+1]);
+            int temp2=f[i][j];
+            dp[i][j]=max(dp[i+1][j],dp[i+1][j+1])+f[i][j];
+            int temp3=dp[i][j];
+            cout<<"";
+        }
+    }
+    printf("%d\n",dp[1][1]);
+}
+void Pratice::maxSeq() {
+    ifstream cin("../resources/seq.txt");
+    const int maxn=100;
+    int A[maxn],dp[maxn];
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>A[i];
+    }
+    dp[0]=A[0];
+    for(int i=1;i<n;i++){
+        dp[i]=max(A[i],dp[i-1]+A[i]);
+    }
+    int k=0;
+    for(int i=1;i<n;i++){
+        if(dp[i]>dp[k]){
+            k=i;
+        }
+    }
+    printf("%d\n",dp[k]);
+
+}

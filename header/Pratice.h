@@ -50,6 +50,9 @@ public:
     void A1053();
     void randNumber();
     void Josephus();
+    void shuta();
+    void maxSeq();
+
 
 };
 

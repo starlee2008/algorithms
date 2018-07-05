@@ -85,6 +85,8 @@ int main()
     //p->qSort();
     //p->randNumber();
     //p->Josephus();
-    frq->acm2736();
+    //frq->acm2736();
+    //p->shuta();
+    p->maxSeq();
 
 }
