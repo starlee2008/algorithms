@@ -539,3 +539,99 @@ void Frq::acm1949() {
             printf("Corrupt\n");
     }
 }
+void Frq::acm1205() {
+    ifstream cin("../resources/acm1205.txt");
+    string sa,sb,t;
+    vector<int> v;
+
+    int a,b,sum;
+    int flag;
+    while(cin>>sa>>sb){
+        flag=0;
+        v.clear();
+        sum=0;
+        reverse(sa.begin(),sa.end());
+        reverse(sb.begin(),sb.end());
+        if(sa.size()<sb.size()){
+            t=sa;
+            sa=sb;
+            sb=t;
+        }
+        for(int i=0;i<sa.size();i++){
+            if(sa[i]=='0') a=0;
+            else if(sa[i]=='1') a=1;
+            else if(sa[i]=='2') a=2;
+            else if(sa[i]=='3') a=3;
+            else if(sa[i]=='4') a=4;
+            else if(sa[i]=='5') a=5;
+            else if(sa[i]=='6') a=6;
+            else if(sa[i]=='7') a=7;
+            else if(sa[i]=='8') a=8;
+            else if(sa[i]=='9') a=9;
+            else if(sa[i]=='a') a=10;
+            else if(sa[i]=='a') a=10;
+            else if(sa[i]=='a') a=10;
+            else if(sa[i]=='b') a=11;
+            else if(sa[i]=='c') a=12;
+            else if(sa[i]=='d') a=13;
+            else if(sa[i]=='e') a=14;
+            else if(sa[i]=='f') a=15;
+            else if(sa[i]=='g') a=16;
+            else if(sa[i]=='h') a=17;
+            else if(sa[i]=='i') a=18;
+            else if(sa[i]=='j') a=19;
+
+            if(i>=sb.size()) b=0;
+            else{
+                if(sb[i]=='0') b=0;
+                else if(sb[i]=='1') b=1;
+                else if(sb[i]=='2') b=2;
+                else if(sb[i]=='3') b=3;
+                else if(sb[i]=='4') b=4;
+                else if(sb[i]=='5') b=5;
+                else if(sb[i]=='6') b=6;
+                else if(sb[i]=='7') b=7;
+                else if(sb[i]=='8') b=8;
+                else if(sb[i]=='9') b=9;
+                else if(sb[i]=='a') b=10;
+                else if(sb[i]=='b') b=11;
+                else if(sb[i]=='c') b=12;
+                else if(sb[i]=='d') b=13;
+                else if(sb[i]=='e') b=14;
+                else if(sb[i]=='f') b=15;
+                else if(sb[i]=='g') b=16;
+                else if(sb[i]=='h') b=17;
+                else if(sb[i]=='i') b=18;
+                else if(sb[i]=='j') b=19;
+            }
+            sum=a+b+flag;
+            if(sum>19){
+                flag=1;
+                sum=sum-20;
+            }else{
+                flag=0;
+            }
+            v.push_back(sum);
+
+        }
+
+        if(flag==1)
+            v.push_back(1);
+
+        for(int i=v.size();i>=0;i--){
+            if(v[i]<10) cout<<v[i];
+            else if(v[i]==10) cout<<"a";
+            else if(v[i]==11) cout<<"b";
+            else if(v[i]==12) cout<<"c";
+            else if(v[i]==13) cout<<"d";
+            else if(v[i]==14) cout<<"e";
+            else if(v[i]==15) cout<<"f";
+            else if(v[i]==16) cout<<"g";
+            else if(v[i]==17) cout<<"h";
+            else if(v[i]==18) cout<<"i";
+            else if(v[i]==19) cout<<"j";
+        }
+        cout<<endl;
+    }
+
+}

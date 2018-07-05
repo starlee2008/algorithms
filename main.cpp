@@ -89,6 +89,7 @@ int main()
     //p->shuta();
     //p->maxSeq();
     //frq->acm1188();
-    frq->acm1949();
+    //frq->acm1949();
+    frq->acm1205();
 
 }
