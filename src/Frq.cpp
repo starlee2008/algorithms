@@ -635,3 +635,18 @@ void Frq::acm1205() {
     }
 
 }
+void Frq::acm2722() {
+    ifstream cin("../resources/acm2722.txt");
+    double i,n,count;
+    while(cin>>n){
+        if(n==0) break;
+        count=0;
+        for(i=0;i<32;i++){
+            if(pow(2,i)>=n){
+                count=i;
+                break;
+            }
+        }
+        cout<<count<<endl;
+    }
+}

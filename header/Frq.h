@@ -37,6 +37,7 @@ public:
     void acm1188();
     void acm1949();
     void acm1205();
+    void acm2722();
 };
 
 #endif //ALGO_FRQ_H
