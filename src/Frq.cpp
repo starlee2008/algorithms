@@ -456,6 +456,91 @@ void Frq::acm2736() {
             printf("NO\n");
         }
     }
+}
+bool cmpdna(const string &s1,const string &s2){
+    int i,j,k,m,n;
+    int c1=0,c2=0;
+    for(int i=0;i<s1.size();i++){
+        for(j=i+1;j<s1.size();j++){
+            if(s1[i]>s1[j]){
+                c1++;
+            }
+        }
+    }
+    for(int i=0;i<s2.size();i++){
+        for(j=i+1;j<s2.size();j++){
+            if(s2[i]>s2[j]){
+                c2++;
+            }
+        }
+    }
+    return c1<c2;
+}
+void Frq::acm1188() {
+    ifstream cin("../resources/acm1188.txt");
+    int n,a,b;
+    cin>>n;
+    string s;
+    vector<string> v;
+    int p=0;
+    for(int i=0;i<n;i++){
+        cin>>a>>b;
+        v.clear();
+        p++;
+        for(int j=0;j<b;j++){
+            cin>>s;
+            v.push_back(s);
+        }
+        sort(v.begin(),v.end(),cmpdna);
+        if(p!=1)
+            printf("\n");
+        for(int k=0;k<v.size();k++){
+            cout<<v[k]<<endl;
+        }
+    }
 
+}
+void Frq::acm1949() {
+    int matritx[100][100];
+    int rowSum[100];
+    int colSum[100];
+    ifstream cin("../resources/acm1949.txt");
+    int i,j,PL,PC,countL,countC;
+    int n;
+    while(cin>>n){
+        if(n==0)
+            break;
+        PL=0;
+        PC=0;
+        countL=0;
+        countC=0;
+        for(i=0;i<n;i++){
+            rowSum[i]=0;
+            colSum[i]=0;
+        }
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                cin>>matritx[i][j];
+                rowSum[i]=rowSum[i]+matritx[i][j];
+                colSum[j]=colSum[j]+matritx[i][j];
+            }
+        }
+        for(i=0;i<n;i++){
+            if(rowSum[i]%2!=0){
+                PL=i;
+                countL++;
+            }
+            if(colSum[i]%2!=0){
+                PC=i;
+                countC++;
+            }
+        }
+        if(countL==0 && countC==0)
+            printf("OK\n");
+        else if(countL==1 && countC==1)
+            printf("Change bit ( %d %d)\n",PL+1,PC+1);
+        else
+            printf("Corrupt\n");
+    }
 
 }
