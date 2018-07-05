@@ -2,14 +2,13 @@
 #include "header/Hello.h"
 #include "header/Pratice.h"
 #include "header/Test.h"
-#include "header/Frq.h"
 
 int main()
 {
     Hello * hello;
     Pratice *p;
     Test *test;
-    Frq *frq;
+
 
     //hello->B1023();
     //hello->B1001();
@@ -85,12 +84,12 @@ int main()
     //p->qSort();
     //p->randNumber();
     //p->Josephus();
-    //frq->acm2736();
+    //test>acm2736();
     //p->shuta();
     //p->maxSeq();
-    //frq->acm1188();
-    //frq->acm1949();
-    //frq->acm1205();
-    frq->acm2722();
+    //test->acm1188();
+    //test->acm1949();
+    //test->acm1205();
+    test->acm2722();
 
 }
