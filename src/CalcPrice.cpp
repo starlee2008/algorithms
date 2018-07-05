@@ -7,22 +7,22 @@
 
 using namespace std;
 
-const int maxn=1000;
+const int maxn = 1000;
 vector<int> child[maxn];
-int maxDepth=0,num=0;
-double p,r;
+int maxDepth = 0, num = 0;
+double p, r;
 
-void DFS(int index,int depth){
-    if(child[index].size()==0){
-        if(depth>maxDepth){
-            maxDepth=depth;
-            num=1;
-        }else if(depth==maxDepth){
+void DFS(int index, int depth) {
+    if (child[index].size() == 0) {
+        if (depth > maxDepth) {
+            maxDepth = depth;
+            num = 1;
+        } else if (depth == maxDepth) {
             num++;
         }
     }
-    for(int i=0;i<child[index].size();i++){
-        DFS(child[index][i],depth+1);
+    for (int i = 0; i < child[index].size(); i++) {
+        DFS(child[index][i], depth + 1);
     }
     return;
 

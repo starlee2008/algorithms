@@ -3,9 +3,8 @@
 #include "header/Pratice.h"
 #include "header/Test.h"
 
-int main()
-{
-    Hello * hello;
+int main() {
+    Hello *hello;
     Pratice *p;
     Test *test;
 
