@@ -204,8 +204,6 @@ void Frq::acm2932() {
 void Frq::acm1251() {
     ifstream cin("../resources/acm1251.txt");
     int n = 0, num, sum = 0, count = 0, move_count = 0;
-
-
     while (cin >> n) {
         int *arr = new int[n];
         if (n == 0) break;
@@ -227,8 +225,6 @@ void Frq::acm1251() {
         delete[] arr;
         n = 0;
         move_count = 0;
-
-
     }
 
 }
@@ -328,7 +324,7 @@ void Frq::testAcm() {
 
 }
 void Frq::acm1295() {
-    ifstream cin("../resouces/acm1295.txt.txt");
+    ifstream cin("../resources/acm1295.txt");
     int n;
     cin>>n;
     cin.get();
@@ -359,7 +355,7 @@ void Frq::acm1295() {
      */
 }
 void Frq::acm1763() {
-    ifstream cin("../resouces/acm1763.txt");
+    ifstream cin("../resources/acm1763.txt");
     double a,b;
     cin>>a;
     while(true){
@@ -542,5 +538,4 @@ void Frq::acm1949() {
         else
             printf("Corrupt\n");
     }
-
 }

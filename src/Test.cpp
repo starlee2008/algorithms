@@ -134,21 +134,21 @@ void Test::testDqueue() {
 
 }
 void Test::testAcm1167() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1167.txt");
     int n;
     while(cin>>n){
         cout<<n*n<<endl;
     }
 }
 void Test::testAcm1166() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1166.txt");
     int a,b;
     while(cin>>a>>b){
         cout<<a-b<<endl;
     }
 }
 void Test::testAcm1174() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1174.txt");
     int n;
     while(cin>>n){
         int sum=0,p=1;
@@ -161,7 +161,7 @@ void Test::testAcm1174() {
 }
 void Test::testAcm1176() {
     int n;
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1176.txt");
     vector<int> v;
     v.push_back(0);
     v.push_back(1);
@@ -175,7 +175,7 @@ void Test::testAcm1176() {
 }
 void Test::testAcm1177() {
     int x,y;
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1177.txt");
     while(cin>>x>>y){
         cout<<gcd(x,y)<<endl;
     }
@@ -191,14 +191,14 @@ int Test::gcd(int x,int y){
 }
 void Test::testAcm1178() {
     int x,y;
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1178.txt");
     while(cin>>x>>y){
         cout<<x/gcd(x,y)*y<<endl;
     }
 }
 void Test::testAcm1179() {
     int n,sum=0;
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1179.txt");
     while(cin>>n){
         for(int i=1;i<=n;i++){
             int x;
@@ -218,14 +218,14 @@ bool Test::isPrime(int n) {
     return true;
 }
 void Test::testAcm1181() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1181.txt");
     int n=0;
     while(cin>>n){
         cout<<(n>100&&n<1000&&n/100==n%10&&isPrime(n)?"Yes\n":"No\n");
     }
 }
 void Test::testAcm1185() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1185.txt");
     int n=0;
     string s="";
     while(cin>>n){
@@ -248,7 +248,7 @@ void Test::testAcm1185() {
     }
 }
 void Test::testAcm1190() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1190.txt");
     vector<int> a;
     for(int i=2;i<10000;i++){
         int sum=1;
@@ -273,7 +273,7 @@ void Test::testAcm1190() {
 
 }
 void Test::testAcm1191() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1191.txt");
     int num=0;
     int f12=479001600;
     multiset<unsigned int> s;
@@ -294,7 +294,7 @@ void Test::testAcm1191() {
 }
 void Test::testAcm1204() {
     multiset<string,Comp> ms;
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1204.txt");
     string s;
     while(cin>>s){
         ms.insert(s);
@@ -312,7 +312,7 @@ bool Comp1(const string &s1, const string &s2) {
 
 }
 void Test::testAcm1208() {
-    ifstream cin("../src/aaa.txt");
+    ifstream cin("../resources/acm1208.txt");
     vector<string> v;
     string s,t;
     while (cin>>s){
