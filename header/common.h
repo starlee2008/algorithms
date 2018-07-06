@@ -82,3 +82,16 @@ struct BNode {
     BNode *lchild;
     BNode *rchild;
 };
+struct Book{
+    string Name;
+    int Year;
+    int Price;
+};
+struct Message{
+    char Name[100];
+    int Data;
+    int Priority;
+    bool operator <(const Message &a) const{
+        return a.Priority<Priority;
+    }
+};

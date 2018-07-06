@@ -17,6 +17,7 @@
 #include <cmath>
 #include <set>
 #include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -115,6 +116,10 @@ public:
     void acm1205();
 
     void acm2722();
+
+    void acm2727();
+
+    void acm2724();
 
 };
 

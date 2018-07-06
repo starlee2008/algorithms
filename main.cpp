@@ -72,7 +72,7 @@ int main() {
     //hello->B1007();
     //hello->B1013();
     //hello->A1015();
-    //frq->acm2812();
+    //test->acm2812();
     //hello->A1020();
     //hello->A1086();
     //p->hashTest();
@@ -89,6 +89,9 @@ int main() {
     //test->acm1188();
     //test->acm1949();
     //test->acm1205();
-    test->acm2722();
+    //test->acm2722();
+    //p->Lis();
+    //test->acm2727();
+    test->acm2724();
 
 }

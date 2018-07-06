@@ -1,6 +1,7 @@
 //
 // Created by starlee on 2018/5/3.
 //
+
 #include "../header/Test.h"
 #include "../Header/common.h"
 
@@ -1020,4 +1021,82 @@ void Test::acm2722() {
         }
         cout << count << endl;
     }
+}
+bool compName(Book b1,Book b2){
+    if(b1.Name!=b2.Name)
+        return b1.Name<b2.Name;
+    else if(b1.Year!=b2.Year)
+        return b1.Year<b2.Year;
+    else
+        return b1.Price<b2.Price;
+
+}
+bool compYear(Book b1,Book b2){
+    if(b1.Year!=b2.Year)
+        return b1.Year<b2.Year;
+    else if(b1.Name!=b2.Name)
+        return b1.Name<b2.Name;
+    else
+        return b1.Price<b2.Price;
+
+}
+bool compPrice(Book b1,Book b2){
+    if(b1.Price!=b2.Price)
+        return b1.Price<b2.Price;
+    else if(b1.Name!=b2.Name)
+        return b1.Name<b2.Name;
+    else
+        return b1.Year<b2.Year;
+
+}
+void Test::acm2727() {
+    ifstream cin("../resources/acm2727.txt");
+    vector<Book> v;
+    Book book;
+    string sorting;
+    int n,i,line=0;
+    while(cin>>n){
+        if(n==0)
+            break;
+        line++;
+        v.clear();
+        for(int i=0;i<n;i++){
+            cin>>book.Name>>book.Year>>book.Price;
+            v.push_back(book);
+        }
+        cin>>sorting;
+        if(sorting=="Name")
+            sort(v.begin(),v.end(),compName);
+        else if(sorting=="Year")
+            sort(v.begin(),v.end(),compYear);
+        else if(sorting=="Price")
+            sort(v.begin(),v.end(),compPrice);
+        if(line!=1)
+            cout<<endl;
+        for(i=0;i<v.size();i++){
+            cout<<v[i].Name<<" "<<v[i].Year<<" "<<v[i].Price<<endl;
+        }
+    }
+
+}
+void Test::acm2724() {
+    ifstream cin("../resources/acm2724.txt");
+    priority_queue<Message> v;
+    char command[100];
+    Message message;
+
+    while(cin>>command){
+        if(strcmp(command,"GET")==0){
+            if(v.size()==0){
+                printf("EMPTY QUEUE!\n");
+            }else{
+                printf("%s %d\n",v.top().Name,v.top().Data);
+                v.pop();
+            }
+        }else if(strcmp(command,"PUT")==0){
+            cin>>message.Name>>message.Data>>message.Priority;
+            v.push(message);
+        }
+    }
+
 }

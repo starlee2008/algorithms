@@ -1,0 +1,12 @@
+3
+LearingGUNEmacs 2003 68
+TheC++StandardLibray 2002 108
+ArtificialIntelligence 2005 75
+Year
+4
+GhostStory 2001 1
+WuxiaStory 2000 2
+SFStory 1999 10
+WeekEnd 1998 5
+Price
+0

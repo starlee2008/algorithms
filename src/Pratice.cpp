@@ -562,3 +562,25 @@ void Pratice::maxSeq() {
     printf("%d\n", dp[k]);
 
 }
+void Pratice::Lis() {
+    ifstream cin("../resources/lis.txt");
+    const int N=100;
+    int A[N],dp[N];
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++) {
+        cin >> A[i];
+    }
+    int ans=-1;
+    for(int i=1;i<=n;i++){
+        dp[i]=1;
+        for(int j=1;j<i;j++){
+            bool flag=(dp[j]+1>dp[i]);
+            if(A[i]>=A[j]&&flag){
+                dp[i]=dp[j]+1;
+            }
+        }
+        ans=max(ans,dp[i]);
+    }
+    printf("%d\n",ans);
+}

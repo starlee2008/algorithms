@@ -85,6 +85,8 @@ public:
 
     void maxSeq();
 
+    void Lis();
+
 
 };
 
