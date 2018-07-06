@@ -7,6 +7,7 @@
 
 #include <string>
 #include <iostream>
+#include <cstdio>
 #include <vector>
 #include <numeric>
 #include <algorithm>
@@ -18,6 +19,7 @@
 #include <set>
 #include <stack>
 #include <queue>
+#include <map>
 
 using namespace std;
 
@@ -108,6 +110,8 @@ public:
     void acm2001x();
 
     void acm2736();
+
+    void acm1109();
 
     void acm1188();
 
