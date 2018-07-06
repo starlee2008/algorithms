@@ -93,6 +93,7 @@ int main() {
     //p->Lis();
     //test->acm2727();
     //test->acm2724();
-    test->acm1109();
+    //test->acm1109();
+    test->acm2818();
 
 }

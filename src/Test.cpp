@@ -1125,3 +1125,18 @@ void Test::acm1109() {
     }
 
 }
+void Test::acm2818() {
+    ifstream cin("../resources/acm2818.txt");
+    double B,N;
+    int A;
+    while(cin>>B>>N){
+        if(B==0&&N==0)
+            break;
+        A=pow(B,1/N);
+        if(B-pow(A,N)<pow(A+1,N)-B)
+            printf("%d\n",A);
+        else
+            printf("%d\n",A+1);
+    }
+
+}
