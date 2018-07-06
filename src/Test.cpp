@@ -1022,121 +1022,181 @@ void Test::acm2722() {
         cout << count << endl;
     }
 }
-bool compName(Book b1,Book b2){
-    if(b1.Name!=b2.Name)
-        return b1.Name<b2.Name;
-    else if(b1.Year!=b2.Year)
-        return b1.Year<b2.Year;
+
+bool compName(Book b1, Book b2) {
+    if (b1.Name != b2.Name)
+        return b1.Name < b2.Name;
+    else if (b1.Year != b2.Year)
+        return b1.Year < b2.Year;
     else
-        return b1.Price<b2.Price;
+        return b1.Price < b2.Price;
 
 }
-bool compYear(Book b1,Book b2){
-    if(b1.Year!=b2.Year)
-        return b1.Year<b2.Year;
-    else if(b1.Name!=b2.Name)
-        return b1.Name<b2.Name;
+
+bool compYear(Book b1, Book b2) {
+    if (b1.Year != b2.Year)
+        return b1.Year < b2.Year;
+    else if (b1.Name != b2.Name)
+        return b1.Name < b2.Name;
     else
-        return b1.Price<b2.Price;
+        return b1.Price < b2.Price;
 
 }
-bool compPrice(Book b1,Book b2){
-    if(b1.Price!=b2.Price)
-        return b1.Price<b2.Price;
-    else if(b1.Name!=b2.Name)
-        return b1.Name<b2.Name;
+
+bool compPrice(Book b1, Book b2) {
+    if (b1.Price != b2.Price)
+        return b1.Price < b2.Price;
+    else if (b1.Name != b2.Name)
+        return b1.Name < b2.Name;
     else
-        return b1.Year<b2.Year;
+        return b1.Year < b2.Year;
 
 }
+
 void Test::acm2727() {
     ifstream cin("../resources/acm2727.txt");
     vector<Book> v;
     Book book;
     string sorting;
-    int n,i,line=0;
-    while(cin>>n){
-        if(n==0)
+    int n, i, line = 0;
+    while (cin >> n) {
+        if (n == 0)
             break;
         line++;
         v.clear();
-        for(int i=0;i<n;i++){
-            cin>>book.Name>>book.Year>>book.Price;
+        for (int i = 0; i < n; i++) {
+            cin >> book.Name >> book.Year >> book.Price;
             v.push_back(book);
         }
-        cin>>sorting;
-        if(sorting=="Name")
-            sort(v.begin(),v.end(),compName);
-        else if(sorting=="Year")
-            sort(v.begin(),v.end(),compYear);
-        else if(sorting=="Price")
-            sort(v.begin(),v.end(),compPrice);
-        if(line!=1)
-            cout<<endl;
-        for(i=0;i<v.size();i++){
-            cout<<v[i].Name<<" "<<v[i].Year<<" "<<v[i].Price<<endl;
+        cin >> sorting;
+        if (sorting == "Name")
+            sort(v.begin(), v.end(), compName);
+        else if (sorting == "Year")
+            sort(v.begin(), v.end(), compYear);
+        else if (sorting == "Price")
+            sort(v.begin(), v.end(), compPrice);
+        if (line != 1)
+            cout << endl;
+        for (i = 0; i < v.size(); i++) {
+            cout << v[i].Name << " " << v[i].Year << " " << v[i].Price << endl;
         }
     }
 
 }
+
 void Test::acm2724() {
     ifstream cin("../resources/acm2724.txt");
     priority_queue<Message> v;
     char command[100];
     Message message;
 
-    while(cin>>command){
-        if(strcmp(command,"GET")==0){
-            if(v.size()==0){
+    while (cin >> command) {
+        if (strcmp(command, "GET") == 0) {
+            if (v.size() == 0) {
                 printf("EMPTY QUEUE!\n");
-            }else{
-                printf("%s %d\n",v.top().Name,v.top().Data);
+            } else {
+                printf("%s %d\n", v.top().Name, v.top().Data);
                 v.pop();
             }
-        }else if(strcmp(command,"PUT")==0){
-            cin>>message.Name>>message.Data>>message.Priority;
+        } else if (strcmp(command, "PUT") == 0) {
+            cin >> message.Name >> message.Data >> message.Priority;
             v.push(message);
         }
     }
 
 }
+
 void Test::acm1109() {
     ifstream cin("../resources/acm1109.txt");
     string s;
-    char ss[100],s1[100],s2[100];
-    int x,y;
-    map<string,string> m;
-    map<string,string>::iterator p;
-    while(cin.getline(ss,100)){
-        s=ss;
-        if(s=="") break;
-        else{
-            sscanf(s.c_str(),"%s %s",s1,s2);
-            m[s2]=s1;
+    char ss[100], s1[100], s2[100];
+    int x, y;
+    map<string, string> m;
+    map<string, string>::iterator p;
+    while (cin.getline(ss, 100)) {
+        s = ss;
+        if (s == "") break;
+        else {
+            sscanf(s.c_str(), "%s %s", s1, s2);
+            m[s2] = s1;
         }
     }
-    while(cin.getline(ss,100)){
-        s=ss;
-        p=m.find(s);
-        if(p!=m.end())
-            cout<<m[s]<<endl;
+    while (cin.getline(ss, 100)) {
+        s = ss;
+        p = m.find(s);
+        if (p != m.end())
+            cout << m[s] << endl;
         else
-            cout<<"eh"<<endl;
+            cout << "eh" << endl;
     }
 
 }
+
 void Test::acm2818() {
     ifstream cin("../resources/acm2818.txt");
-    double B,N;
+    double B, N;
     int A;
-    while(cin>>B>>N){
-        if(B==0&&N==0)
+    while (cin >> B >> N) {
+        if (B == 0 && N == 0)
             break;
-        A=pow(B,1/N);
-        if(B-pow(A,N)<pow(A+1,N)-B)
-            printf("%d\n",A);
+        A = pow(B, 1 / N);
+        if (B - pow(A, N) < pow(A + 1, N) - B)
+            printf("%d\n", A);
         else
-            printf("%d\n",A+1);
+            printf("%d\n", A + 1);
+    }
+
+}
+
+void Test::acm2829() {
+    map<int, int> m;
+    ifstream cin("../resources/acm2829.txt");
+    int i = 0;
+    int p = 0;
+    while (1) {
+        i++;
+        if (i % 3 == 0 || i % 5 == 0) {
+            p++;
+            if (p > 100000)
+                break;
+            m[p] = i;
+        }
+    }
+    int n;
+    map<int, int>::iterator it;
+    while (cin >> n) {
+        cout << m[n] << endl;
+    }
+
+}
+void Test::acm2876() {
+    ifstream cin("../resources/acm2876.txt");
+    vector<string> v;
+    string s;
+    int n;
+    cin>>n;
+    int i;
+    bool  outFlag;
+    while(cin>>n){
+        v.clear();
+        for(i=0;i<n;i++){
+            cin>>s;
+            v.push_back(s);
+        }
+        sort(v.begin(),v.end());
+        for(i=0;i<n-1;i++){
+            if(v[i+1].find(v[i])==0){
+                cout<<"NO"<<endl;
+                outFlag=false;
+                break;
+            }
+        }
+
+        if(outFlag){
+            cout<<"YES"<<endl;
+        }
+        outFlag=true;
+
     }
 
 }
