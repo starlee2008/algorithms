@@ -1200,3 +1200,34 @@ void Test::acm2876() {
     }
 
 }
+void Test::acm2201() {
+    ifstream cin("../resources/acm2201.txt");
+    int a,b;
+    cin>>a;
+    while(cin>>a>>b){
+        if(a<b) cout<<"NO BRAINS"<<endl;
+        else cout<<"MMM BRAINS"<<endl;
+    }
+}
+
+void Test::acm2772() {
+    ifstream cin("../resources/acm2772.txt");
+    int q,d,n,p;
+    int m;
+    int i=0;
+    cin>>m;
+    while(cin>>m){
+        q=m/25;
+        m=m%25;
+
+        d=m/10;
+        m=m%10;
+
+        n=m/5;
+        m=m%5;
+
+        p=m;
+        i++;
+        cout<<i<<" "<<q<<" QUARTERS(S) ,"<<d<<" DIME(S), "<<n<<" NICKEL(S), "<<p<<" PENNY(S)"<<endl;
+    }
+}
