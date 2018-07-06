@@ -1169,65 +1169,90 @@ void Test::acm2829() {
     }
 
 }
+
 void Test::acm2876() {
     ifstream cin("../resources/acm2876.txt");
     vector<string> v;
     string s;
     int n;
-    cin>>n;
+    cin >> n;
     int i;
-    bool  outFlag;
-    while(cin>>n){
+    bool outFlag;
+    while (cin >> n) {
         v.clear();
-        for(i=0;i<n;i++){
-            cin>>s;
+        for (i = 0; i < n; i++) {
+            cin >> s;
             v.push_back(s);
         }
-        sort(v.begin(),v.end());
-        for(i=0;i<n-1;i++){
-            if(v[i+1].find(v[i])==0){
-                cout<<"NO"<<endl;
-                outFlag=false;
+        sort(v.begin(), v.end());
+        for (i = 0; i < n - 1; i++) {
+            if (v[i + 1].find(v[i]) == 0) {
+                cout << "NO" << endl;
+                outFlag = false;
                 break;
             }
         }
 
-        if(outFlag){
-            cout<<"YES"<<endl;
+        if (outFlag) {
+            cout << "YES" << endl;
         }
-        outFlag=true;
+        outFlag = true;
 
     }
 
 }
+
 void Test::acm2201() {
     ifstream cin("../resources/acm2201.txt");
-    int a,b;
-    cin>>a;
-    while(cin>>a>>b){
-        if(a<b) cout<<"NO BRAINS"<<endl;
-        else cout<<"MMM BRAINS"<<endl;
+    int a, b;
+    cin >> a;
+    while (cin >> a >> b) {
+        if (a < b) cout << "NO BRAINS" << endl;
+        else cout << "MMM BRAINS" << endl;
     }
 }
 
 void Test::acm2772() {
     ifstream cin("../resources/acm2772.txt");
-    int q,d,n,p;
+    int q, d, n, p;
     int m;
-    int i=0;
-    cin>>m;
-    while(cin>>m){
-        q=m/25;
-        m=m%25;
+    int i = 0;
+    cin >> m;
+    while (cin >> m) {
+        q = m / 25;
+        m = m % 25;
 
-        d=m/10;
-        m=m%10;
+        d = m / 10;
+        m = m % 10;
 
-        n=m/5;
-        m=m%5;
+        n = m / 5;
+        m = m % 5;
 
-        p=m;
+        p = m;
         i++;
-        cout<<i<<" "<<q<<" QUARTERS(S) ,"<<d<<" DIME(S), "<<n<<" NICKEL(S), "<<p<<" PENNY(S)"<<endl;
+        cout << i << " " << q << " QUARTERS(S) ," << d << " DIME(S), " << n << " NICKEL(S), " << p << " PENNY(S)"
+             << endl;
     }
+}
+
+void Test::acm2176() {
+    ifstream cin("../resources/acm2176.txt");
+    int n, a, b, bb, sum, i;
+    while (cin >> n) {
+        if (n == -1) break;
+        sum = 0;
+        bb = 0;
+        for (i = 0; i < n; i++) {
+            cin >> a >> b;
+            if (i == 0) {
+                bb = b;
+                sum = sum + a * bb;
+            } else {
+                sum = sum + a * (b - bb);
+                bb = b;
+            }
+        }
+        cout << sum << " miles" << endl;
+    }
+
 }
