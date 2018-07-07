@@ -142,7 +142,7 @@ void Test::testDqueue() {
     cout << endl;
 
 }
-
+// http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1167
 void Test::acm1167() {
     ifstream cin("../resources/acm1167.txt");
     int n;
@@ -1255,4 +1255,58 @@ void Test::acm2176() {
         cout << sum << " miles" << endl;
     }
 
+}
+void Test::acm2835() {
+    ifstream cin("../resources/acm2835.txt");
+    int matrix[9][9];
+    int line[9],column[9];
+    int a,b;
+    set<int> s;
+    int n,i,j;
+    while(cin>>n){
+        if(n==0)
+            break;
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                cin>>matrix[i][j];
+            }
+        }
+        s.clear();
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                s.insert(matrix[i][j]);
+            }
+        }
+        if(s.size()!=n*n){
+            cout<<"NO"<<endl;
+            continue;
+        }
+        a=0;
+        b=0;
+        for(i=0;i<n;i++){
+            line[i]=0;
+            column[i]=0;
+        }
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                line[i]+=matrix[i][j];
+                column[j]+=matrix[i][j];
+                if(i==j)
+                    a+=matrix[i][j];
+                if(i+j==n-1)
+                    b+=matrix[i][j];
+            }
+        }
+        s.clear();
+        s.insert(a);
+        s.insert(b);
+        for(i=0;i<n;i++){
+            s.insert(line[i]);
+            s.insert(column[i]);
+        }
+        if(s.size()!=1)
+            cout<<"NO"<<endl;
+        else
+            cout<<"YES"<<endl;
+    }
 }
