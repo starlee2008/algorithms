@@ -102,6 +102,8 @@ int main() {
     //test->acm2176();
     //test->acm2835();
     //test->acm2723();
-    test->acm2420();
+    //test->acm2420();
+    //test->acm2388();
+    test->acm1760();
 
 }

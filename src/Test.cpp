@@ -1442,3 +1442,49 @@ void Test::acm2420() {
     }
 
 }
+void Test::acm2388() {
+    ifstream cin("../resources/acm2388.txt");
+    int n,x,y,a,b;
+    cin>>n;
+    while(cin>>a>>b){
+        if(a<b){
+            cout<<"impossible"<<endl;
+            continue;
+        }
+        if((a+b)%2!=0||abs(a-b)%2!=0){
+            cout<<"impossible"<<endl;
+            continue;
+        }
+        x=abs((a+b)/2);
+        y=abs((a-b)/2);
+        if(x>y)
+            cout<<x<<" "<<y<<endl;
+        else
+            cout<<y<<" "<<x<<endl;
+    }
+
+}
+void Test::acm1760() {
+    ifstream cin("../resources/acm1760.txt");
+    set<int> s;
+    set<int> ::iterator it,itt;
+    int sum=0;
+    int n;
+    while(cin>>n){
+        if(n==-1)
+            break;
+        if(n!=0){
+            s.insert(n);
+        }
+        if(n==0){
+            for(it=s.begin();it!=s.end();it++){
+                if(s.find(2*(*it))!=s.end()){
+                    sum++;
+                }
+            }
+            cout<<sum<<endl;
+            sum=0;
+            s.clear();
+        }
+    }
+}
