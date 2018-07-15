@@ -95,4 +95,10 @@ struct Message{
         return a.Priority<Priority;
     }
 };
+struct Info{
+    int year;
+    int month;
+    int day;
+    int week;
+};
 

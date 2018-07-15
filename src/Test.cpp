@@ -1358,3 +1358,87 @@ void Test::acm2723() {
     }
 
 }
+bool leap_year(int year){
+    if((year%4==0&&year%100!=0)||year%400==0)
+        return true;
+    else
+        return false;
+}
+void Test::acm2420() {
+    vector<Info> v;
+    ifstream cin("../resources/acm2420.txt");
+    int i,j,k;
+    int p=0;
+    Info info;
+    int flag=0;
+    int week=5;
+    for(i=2000;i<=9999;i++){
+        flag=leap_year(i);
+        for(j=1;j<=12;j++){
+            for(k=1;k<=31;k++){
+                if(j==1||j==3||j==5||j==7||j==8||j==10||j==12)
+                    p++;
+                else if(j==4||j==6||j==9||j==11){
+                    if(k!=31)
+                        p++;
+                    else
+                        break;
+                }
+                else if(j==2){
+                    if(flag){
+                        if(k!=30&&k!=31)
+                            p++;
+                        else
+                            break;
+                    }else{
+                        if(k!=29&&k!=30&&k!=31)
+                            p++;
+                        else
+                            break;
+                    }
+                }
+                info.year=i;
+                info.month=j;
+                info.day=k;
+                week++;
+                if(week==8)
+                    week=1;
+                info.week=week;
+                v.push_back(info);
+
+            }
+        }
+    }
+    int n;
+    while(cin>>n){
+        if(n==-1)
+            break;
+        else{
+            cout<<v[n].year<<"-";
+            if(v[n].month<10)
+                cout<<"0"<<v[n].month<<"-";
+            else
+                cout<<v[n].month<<"-";
+            if(v[n].day<10)
+                cout<<"0"<<v[n].day<<"-";
+            else
+                cout<<v[n].day<<"-";
+
+            if(v[n].week==1)
+                cout<<"Monday"<<endl;
+            else if(v[n].week==2)
+                cout<<"Tuesday"<<endl;
+            else if(v[n].week==3)
+                cout<<"Wedneday"<<endl;
+            else if(v[n].week==4)
+                cout<<"Thursday"<<endl;
+            else if(v[n].week==5)
+                cout<<"Friday"<<endl;
+            else if(v[n].week==6)
+                cout<<"Saturday"<<endl;
+            else if(v[n].week==7)
+                cout<<"Sunday"<<endl;
+        }
+    }
+
+}

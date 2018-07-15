@@ -47,8 +47,6 @@ public:
 
     int gcd(int x, int y);
 
-
-
     void acm1167();
 
     void acm1166();
@@ -142,6 +140,8 @@ public:
     void acm2835();
 
     void acm2723();
+
+    void acm2420();
 
 };
 
