@@ -4,7 +4,14 @@
 
 #include "../header/Hello.h"
 #include "../header/common.h"
-
+bool Hello::isPrime(int n) {
+    int sq = sqrt(n * 1.0);
+    for (int i = 2; i < sq; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
 
 void Hello::C1934() {
     ifstream cin("../resources/C1934.txt");
@@ -1217,14 +1224,6 @@ void Hello::A1071() {
     cout << ans << " " << MAX << endl;
 }
 
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    int sqr = (int) sqrt(1.0 * n);
-    for (int i = 2; i <= sqr; i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
 
 void Hello::B1007() {
     ifstream cin("../resources/B1007.txt");

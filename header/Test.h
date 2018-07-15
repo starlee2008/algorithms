@@ -25,6 +25,8 @@ using namespace std;
 
 class Test {
 public:
+
+
     void firstRun();
 
     int add(int a, int b);
@@ -45,7 +47,7 @@ public:
 
     int gcd(int x, int y);
 
-    bool isPrime(int n);
+
 
     void acm1167();
 
@@ -138,6 +140,8 @@ public:
     void acm2176();
 
     void acm2835();
+
+    void acm2723();
 
 };
 

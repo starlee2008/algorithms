@@ -19,6 +19,7 @@ using namespace std;
 
 class Hello {
 public:
+    bool isPrime(int n);
 
     void B1023();
 

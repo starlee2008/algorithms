@@ -5,6 +5,7 @@
 #include "../header/Test.h"
 #include "../Header/common.h"
 
+
 void Test::firstRun() {
     {
         int i = 1;
@@ -226,8 +227,7 @@ void Test::acm1179() {
     }
 
 }
-
-bool Test::isPrime(int n) {
+bool isPrime(int n) {
     int sq = sqrt(n * 1.0);
     for (int i = 2; i < sq; i++) {
         if (n % i == 0)
@@ -235,6 +235,7 @@ bool Test::isPrime(int n) {
     }
     return true;
 }
+
 
 void Test::acm1181() {
     ifstream cin("../resources/acm1181.txt");
@@ -1309,4 +1310,51 @@ void Test::acm2835() {
         else
             cout<<"YES"<<endl;
     }
+}
+
+vector<int>  pt(int a,int b){
+    vector<int> v;
+    v.push_back(2);
+    bool outFlag;
+    for (int i = a; i <=b; i++) {
+        if(i!=2&&i%2==0)
+            continue;
+        for(int j=3;j*j<=i;j+=2){
+            if(i%j==0){
+                outFlag=false;
+                break;
+            }
+        }
+        if (outFlag) {
+            v.push_back(i);
+        }
+        outFlag = true;
+
+    }
+    return v;
+}
+void Test::acm2723() {
+    ifstream cin("../resources/acm2723.txt");
+    set<int> s;
+    vector<int>v=pt(2,500000);
+    int i,j,p;
+    for(i=0;i<v.size();i++){
+        for(j=0;j<v.size();j++){
+            p=v[i]*v[j];
+            if(p<1000000)
+                s.insert(p);
+            else
+                break;
+        }
+    }
+    int n;
+    set<int>::iterator it;
+    while(cin>>n){
+        it=s.find(n);
+        if(it!=s.end())
+            cout<<"Yes"<<endl;
+        else
+            cout<<"No"<<endl;
+    }
+
 }
