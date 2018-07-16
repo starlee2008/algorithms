@@ -1,0 +1,14 @@
+4
+command.com
+msdos.sys
+config.sys
+io.sys
+2
+com*.com
+*.sys
+3
+a.txt
+b.txt
+c.txt
+1
+*.doc

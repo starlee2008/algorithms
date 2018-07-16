@@ -147,6 +147,8 @@ public:
 
     void acm1760();
 
+    void acm2840();
+
 };
 
 #endif //ALGO_TEST_H
