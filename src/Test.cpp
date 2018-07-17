@@ -143,6 +143,7 @@ void Test::testDqueue() {
     cout << endl;
 
 }
+
 // http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1167
 void Test::acm1167() {
     ifstream cin("../resources/acm1167.txt");
@@ -227,6 +228,7 @@ void Test::acm1179() {
     }
 
 }
+
 bool isPrime(int n) {
     int sq = sqrt(n * 1.0);
     for (int i = 2; i < sq; i++) {
@@ -1257,71 +1259,72 @@ void Test::acm2176() {
     }
 
 }
+
 void Test::acm2835() {
     ifstream cin("../resources/acm2835.txt");
     int matrix[9][9];
-    int line[9],column[9];
-    int a,b;
+    int line[9], column[9];
+    int a, b;
     set<int> s;
-    int n,i,j;
-    while(cin>>n){
-        if(n==0)
+    int n, i, j;
+    while (cin >> n) {
+        if (n == 0)
             break;
-        for(i=0;i<n;i++){
-            for(j=0;j<n;j++){
-                cin>>matrix[i][j];
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                cin >> matrix[i][j];
             }
         }
         s.clear();
-        for(i=0;i<n;i++){
-            for(j=0;j<n;j++){
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
                 s.insert(matrix[i][j]);
             }
         }
-        if(s.size()!=n*n){
-            cout<<"NO"<<endl;
+        if (s.size() != n * n) {
+            cout << "NO" << endl;
             continue;
         }
-        a=0;
-        b=0;
-        for(i=0;i<n;i++){
-            line[i]=0;
-            column[i]=0;
+        a = 0;
+        b = 0;
+        for (i = 0; i < n; i++) {
+            line[i] = 0;
+            column[i] = 0;
         }
-        for(i=0;i<n;i++){
-            for(j=0;j<n;j++){
-                line[i]+=matrix[i][j];
-                column[j]+=matrix[i][j];
-                if(i==j)
-                    a+=matrix[i][j];
-                if(i+j==n-1)
-                    b+=matrix[i][j];
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                line[i] += matrix[i][j];
+                column[j] += matrix[i][j];
+                if (i == j)
+                    a += matrix[i][j];
+                if (i + j == n - 1)
+                    b += matrix[i][j];
             }
         }
         s.clear();
         s.insert(a);
         s.insert(b);
-        for(i=0;i<n;i++){
+        for (i = 0; i < n; i++) {
             s.insert(line[i]);
             s.insert(column[i]);
         }
-        if(s.size()!=1)
-            cout<<"NO"<<endl;
+        if (s.size() != 1)
+            cout << "NO" << endl;
         else
-            cout<<"YES"<<endl;
+            cout << "YES" << endl;
     }
 }
 
-vector<int>  pt(int a,int b){
+vector<int> pt(int a, int b) {
     vector<int> v;
     v.push_back(2);
     bool outFlag;
-    for (int i = a; i <=b; i++) {
-        if(i!=2&&i%2==0)
+    for (int i = a; i <= b; i++) {
+        if (i != 2 && i % 2 == 0)
             continue;
-        for(int j=3;j*j<=i;j+=2){
-            if(i%j==0){
-                outFlag=false;
+        for (int j = 3; j * j <= i; j += 2) {
+            if (i % j == 0) {
+                outFlag = false;
                 break;
             }
         }
@@ -1333,15 +1336,16 @@ vector<int>  pt(int a,int b){
     }
     return v;
 }
+
 void Test::acm2723() {
     ifstream cin("../resources/acm2723.txt");
     set<int> s;
-    vector<int>v=pt(2,500000);
-    int i,j,p;
-    for(i=0;i<v.size();i++){
-        for(j=0;j<v.size();j++){
-            p=v[i]*v[j];
-            if(p<1000000)
+    vector<int> v = pt(2, 500000);
+    int i, j, p;
+    for (i = 0; i < v.size(); i++) {
+        for (j = 0; j < v.size(); j++) {
+            p = v[i] * v[j];
+            if (p < 1000000)
                 s.insert(p);
             else
                 break;
@@ -1349,192 +1353,196 @@ void Test::acm2723() {
     }
     int n;
     set<int>::iterator it;
-    while(cin>>n){
-        it=s.find(n);
-        if(it!=s.end())
-            cout<<"Yes"<<endl;
+    while (cin >> n) {
+        it = s.find(n);
+        if (it != s.end())
+            cout << "Yes" << endl;
         else
-            cout<<"No"<<endl;
+            cout << "No" << endl;
     }
 
 }
-bool leap_year(int year){
-    if((year%4==0&&year%100!=0)||year%400==0)
+
+bool leap_year(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
         return true;
     else
         return false;
 }
+
 void Test::acm2420() {
     vector<Info> v;
     ifstream cin("../resources/acm2420.txt");
-    int i,j,k;
-    int p=0;
+    int i, j, k;
+    int p = 0;
     Info info;
-    int flag=0;
-    int week=5;
-    for(i=2000;i<=9999;i++){
-        flag=leap_year(i);
-        for(j=1;j<=12;j++){
-            for(k=1;k<=31;k++){
-                if(j==1||j==3||j==5||j==7||j==8||j==10||j==12)
+    int flag = 0;
+    int week = 5;
+    for (i = 2000; i <= 9999; i++) {
+        flag = leap_year(i);
+        for (j = 1; j <= 12; j++) {
+            for (k = 1; k <= 31; k++) {
+                if (j == 1 || j == 3 || j == 5 || j == 7 || j == 8 || j == 10 || j == 12)
                     p++;
-                else if(j==4||j==6||j==9||j==11){
-                    if(k!=31)
+                else if (j == 4 || j == 6 || j == 9 || j == 11) {
+                    if (k != 31)
                         p++;
                     else
                         break;
-                }
-                else if(j==2){
-                    if(flag){
-                        if(k!=30&&k!=31)
+                } else if (j == 2) {
+                    if (flag) {
+                        if (k != 30 && k != 31)
                             p++;
                         else
                             break;
-                    }else{
-                        if(k!=29&&k!=30&&k!=31)
+                    } else {
+                        if (k != 29 && k != 30 && k != 31)
                             p++;
                         else
                             break;
                     }
                 }
-                info.year=i;
-                info.month=j;
-                info.day=k;
+                info.year = i;
+                info.month = j;
+                info.day = k;
                 week++;
-                if(week==8)
-                    week=1;
-                info.week=week;
+                if (week == 8)
+                    week = 1;
+                info.week = week;
                 v.push_back(info);
 
             }
         }
     }
     int n;
-    while(cin>>n){
-        if(n==-1)
+    while (cin >> n) {
+        if (n == -1)
             break;
-        else{
-            cout<<v[n].year<<"-";
-            if(v[n].month<10)
-                cout<<"0"<<v[n].month<<"-";
+        else {
+            cout << v[n].year << "-";
+            if (v[n].month < 10)
+                cout << "0" << v[n].month << "-";
             else
-                cout<<v[n].month<<"-";
-            if(v[n].day<10)
-                cout<<"0"<<v[n].day<<"-";
+                cout << v[n].month << "-";
+            if (v[n].day < 10)
+                cout << "0" << v[n].day << "-";
             else
-                cout<<v[n].day<<"-";
+                cout << v[n].day << "-";
 
-            if(v[n].week==1)
-                cout<<"Monday"<<endl;
-            else if(v[n].week==2)
-                cout<<"Tuesday"<<endl;
-            else if(v[n].week==3)
-                cout<<"Wedneday"<<endl;
-            else if(v[n].week==4)
-                cout<<"Thursday"<<endl;
-            else if(v[n].week==5)
-                cout<<"Friday"<<endl;
-            else if(v[n].week==6)
-                cout<<"Saturday"<<endl;
-            else if(v[n].week==7)
-                cout<<"Sunday"<<endl;
+            if (v[n].week == 1)
+                cout << "Monday" << endl;
+            else if (v[n].week == 2)
+                cout << "Tuesday" << endl;
+            else if (v[n].week == 3)
+                cout << "Wedneday" << endl;
+            else if (v[n].week == 4)
+                cout << "Thursday" << endl;
+            else if (v[n].week == 5)
+                cout << "Friday" << endl;
+            else if (v[n].week == 6)
+                cout << "Saturday" << endl;
+            else if (v[n].week == 7)
+                cout << "Sunday" << endl;
         }
     }
 
 }
+
 void Test::acm2388() {
     ifstream cin("../resources/acm2388.txt");
-    int n,x,y,a,b;
-    cin>>n;
-    while(cin>>a>>b){
-        if(a<b){
-            cout<<"impossible"<<endl;
+    int n, x, y, a, b;
+    cin >> n;
+    while (cin >> a >> b) {
+        if (a < b) {
+            cout << "impossible" << endl;
             continue;
         }
-        if((a+b)%2!=0||abs(a-b)%2!=0){
-            cout<<"impossible"<<endl;
+        if ((a + b) % 2 != 0 || abs(a - b) % 2 != 0) {
+            cout << "impossible" << endl;
             continue;
         }
-        x=abs((a+b)/2);
-        y=abs((a-b)/2);
-        if(x>y)
-            cout<<x<<" "<<y<<endl;
+        x = abs((a + b) / 2);
+        y = abs((a - b) / 2);
+        if (x > y)
+            cout << x << " " << y << endl;
         else
-            cout<<y<<" "<<x<<endl;
+            cout << y << " " << x << endl;
     }
 
 }
+
 void Test::acm1760() {
     ifstream cin("../resources/acm1760.txt");
     set<int> s;
-    set<int> ::iterator it,itt;
-    int sum=0;
+    set<int>::iterator it, itt;
+    int sum = 0;
     int n;
-    while(cin>>n){
-        if(n==-1)
+    while (cin >> n) {
+        if (n == -1)
             break;
-        if(n!=0){
+        if (n != 0) {
             s.insert(n);
         }
-        if(n==0){
-            for(it=s.begin();it!=s.end();it++){
-                if(s.find(2*(*it))!=s.end()){
+        if (n == 0) {
+            for (it = s.begin(); it != s.end(); it++) {
+                if (s.find(2 * (*it)) != s.end()) {
                     sum++;
                 }
             }
-            cout<<sum<<endl;
-            sum=0;
+            cout << sum << endl;
+            sum = 0;
             s.clear();
         }
     }
 }
+
 void Test::acm2840() {
     ifstream cin("../resources/acm2840.txt");
-    string s,ss,left,right;
-    vector<string> v,end;
-    int m,n;
-    int i,j,k;
-    int p,q;
-    int c=0;
-    while(cin>>m){
+    string s, ss, left, right;
+    vector<string> v, end;
+    int m, n;
+    int i, j, k;
+    int p, q;
+    int c = 0;
+    while (cin >> m) {
         c++;
-        if(c>1)
-            cout<<endl;
+        if (c > 1)
+            cout << endl;
         v.clear();
-        for(int i=0;i<m;i++){
-            cin>>s;
+        for (int i = 0; i < m; i++) {
+            cin >> s;
             v.push_back(s);
         }
-        cin>>n;
-        for(int i=0;i<n;i++){
-            cin>>ss;
-            left="";
-            right="";
-            p=ss.find("*");
-            for(j=0;j<p;j++){
-                left+=ss[j];
+        cin >> n;
+        for (int i = 0; i < n; i++) {
+            cin >> ss;
+            left = "";
+            right = "";
+            p = ss.find("*");
+            for (j = 0; j < p; j++) {
+                left += ss[j];
             }
-            for(j=p+1;j<ss.length();j++){
-                right+=ss[j];
+            for (j = p + 1; j < ss.length(); j++) {
+                right += ss[j];
             }
             end.clear();
-            for(j=0;j<v.size();j++){
-                if(v[j].size()<(left.size()+right.size()))
+            for (j = 0; j < v.size(); j++) {
+                if (v[j].size() < (left.size() + right.size()))
                     continue;
-                if(left.size()!=0){
-                    if(v[j].find(left)!=0)
+                if (left.size() != 0) {
+                    if (v[j].find(left) != 0)
                         continue;
                 }
-                if(right.size()!=0){
-                    reverse(right.begin(),right.end());
-                    reverse(v[j].begin(),v[j].end());
-                    if(v[j].find(right)!=0){
-                        reverse(right.begin(),right.end());
-                        reverse(v[j].begin(),v[j].end());
+                if (right.size() != 0) {
+                    reverse(right.begin(), right.end());
+                    reverse(v[j].begin(), v[j].end());
+                    if (v[j].find(right) != 0) {
+                        reverse(right.begin(), right.end());
+                        reverse(v[j].begin(), v[j].end());
                         continue;
                     }
-                    reverse(right.begin(),right.end());
-                    reverse(v[j].begin(),v[j].end());
+                    reverse(right.begin(), right.end());
+                    reverse(v[j].begin(), v[j].end());
 
 
                 }
@@ -1542,18 +1550,108 @@ void Test::acm2840() {
 
             }
 
-            for(k=0;k<end.size();k++){
-                cout<<end[k];
-                if(k!=end.size()-1)
-                    cout<<", ";
+            for (k = 0; k < end.size(); k++) {
+                cout << end[k];
+                if (k != end.size() - 1)
+                    cout << ", ";
                 else
-                    cout<<endl;
+                    cout << endl;
             }
-            if(end.size()==0){
-                cout<<"FILE NOT FOUND"<<endl;
+            if (end.size() == 0) {
+                cout << "FILE NOT FOUND" << endl;
             }
 
         }
+    }
+
+}
+
+void Test::acm2476() {
+    ifstream cin("../resources/acm2476.txt");
+    string sa, sb, t;
+    int pa, pb, pc;
+    map<char, int> m;
+    m['0'] = 0;
+    m['1'] = 1;
+    m['2'] = 2;
+    m['3'] = 3;
+    m['4'] = 4;
+    m['5'] = 5;
+    m['6'] = 6;
+    m['7'] = 7;
+    m['8'] = 8;
+    m['9'] = 9;
+    map<char, int> mm;
+    mm[0] = '0';
+    mm[1] = '1';
+    mm[2] = '2';
+    mm[3] = '3';
+    mm[4] = '4';
+    mm[5] = '5';
+    mm[6] = '6';
+    mm[7] = '7';
+    mm[8] = '8';
+    mm[9] = '9';
+    int n, i, j;
+    int flag = 0;
+    while (cin >> n) {
+        if (n == 0)
+            break;
+        for (i = 0; i < n; i++) {
+            cin >> sb;
+            sb.erase(0, 1);
+            t = "";
+            for (j = 0; j < sb.size(); j++) {
+                if (sb[j] != ',')
+                    t += sb[j];
+            }
+            sb = t;
+            reverse(sb.begin(), sb.end());
+            sb.erase(2, 1);
+            if (i == 0)
+                sa = sb;
+            else {
+                flag = 0;
+                if (sa.size() < sb.size()) {
+                    t = sa;
+                    sa = sb;
+                    sb = t;
+                }
+                for (j = 0; j < sa.size(); j++) {
+                    pa = m[sa[j]];
+                    if (j > sb.size())
+                        pb = 0;
+                    else
+                        pb = m[sb[j]];
+
+                    pc = pa + pb + flag;
+                    if (pc > 9) {
+                        pc = pc - 10;
+                        flag = 1;
+                    } else {
+                        flag = 0;
+                    }
+                    sa[j] = mm[pc];
+                }
+                //最高位的进位
+                if (flag == 1)
+                    sa += "1";
+            }
+        }
+        t = "";
+        for (i = 0; i < sa.size(); i++) {
+            t = t + sa[i];
+            if (i == 1)
+                t = t + ".";
+            if (i != 1 && (i - 1) % 3 == 0 && i != (sa.size() - 1))
+                t = t + ",";
+        }
+        sa = t;
+        cout << "$";
+        for (i = sa.size() - 1; i >= 0; i--) {
+            cout << sa[i];
+        }
+        cout << endl;
     }
 
 }
