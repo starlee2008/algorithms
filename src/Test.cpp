@@ -1655,3 +1655,64 @@ void Test::acm2476() {
     }
 
 }
+
+void Test::acm2104() {
+    ifstream cin("../resources/acm2104.txt");
+    map<string,int> m;
+    int n;
+    int i;
+    string s;
+    map<string,int>::iterator it,it2;
+    while(cin>>n){
+        if(n==0)
+            break;
+        m.clear();
+        for(i=0;i<n;i++){
+            cin>>s;
+            if(m.find(s)!=m.end()){
+                m[s]=m[s]+1;
+            } else
+            {
+                m[s]=1;
+            }
+        }
+        it2=m.begin();
+        for(it=m.begin();it!=m.end();it++){
+            if(it2->second<it->second){
+                it2=it;
+            }
+        }
+        cout<<it2->first<<endl;
+    }
+
+}
+void Test::acm1392() {
+    ifstream cin("../resources/acm1392.txt");
+    string s;
+    char ss[200];
+    map<char,char> m;
+    string s1="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string s2="VWXYZABCDEFGHIJKLMNOPQRSTU";
+    for(int i=0;i<s1.length();i++){
+        m[s1[i]]=s2[i];
+    }
+    while(cin.getline(ss,200)){
+        s=ss;
+        if(s=="START")
+            continue;
+        else if(s=="END")
+            continue;
+        else if(s=="ENDOFINPUT")
+            break;
+        else{
+            for(int i=0;i<s.size();i++){
+                if(s[i]>='A'&&s[i]<='Z'){
+                    cout<<m[s[i]];
+                }else{
+                    cout<<s[i];
+                }
+            }
+            cout<<endl;
+        }
+    }
+}
