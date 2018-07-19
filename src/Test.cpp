@@ -1716,3 +1716,63 @@ void Test::acm1392() {
         }
     }
 }
+void Test::acm2417() {
+    ifstream cin("../resources/acm2417.txt");
+    int n,num;
+    while(cin>>n){
+        num=0;
+        if(n==0)
+            break;
+        while(n%2!=1){
+            num++;
+            n/=2;
+        }
+        cout<<pow(2.0,num)<<endl;
+    }
+}
+void Test::acm2060() {
+    vector<unsigned int> v;
+    ifstream cin("../resources/acm2060.txt");
+    unsigned int n1,n2,t;
+    unsigned int n;
+    int i;
+    n1=7;
+    n2=11;
+    v.push_back(7);
+    v.push_back(11);
+    for(i=2;i<=1000000;i++){
+        v.push_back(n1+n2);
+        t=n1+n2;
+        n1=n2;
+        n2=t;
+    }
+    while(cin>>n){
+        if(v[n]%3==0)
+            cout<<"yes"<<endl;
+        else
+            cout<<"no"<<endl;
+    }
+
+}
+void Test::acm2095() {
+    int m[500000];
+    ifstream cin("../resources/acm2095.txt");
+    int i,j;
+    int n;
+    int d;
+    d=sqrt(500000.0);
+    m[1]=0;
+    for(i=2;i<=500000;i++)
+        m[i]=1;
+    for(i=2;i<=d;i++){
+        m[i*i]+=i;
+        for(j=i+1;j<=(500000)/i;j++){
+            m[i*j]+=(i+j);
+        }
+    }
+    cin>>n;
+    while(cin>>n){
+        printf("%d\n",m[n]);
+    }
+
+}
