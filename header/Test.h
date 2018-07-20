@@ -161,6 +161,8 @@ public:
 
     void acm2095();
 
+    void acm1115();
+
 };
 
 #endif //ALGO_TEST_H

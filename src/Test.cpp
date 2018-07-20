@@ -1658,121 +1658,164 @@ void Test::acm2476() {
 
 void Test::acm2104() {
     ifstream cin("../resources/acm2104.txt");
-    map<string,int> m;
+    map<string, int> m;
     int n;
     int i;
     string s;
-    map<string,int>::iterator it,it2;
-    while(cin>>n){
-        if(n==0)
+    map<string, int>::iterator it, it2;
+    while (cin >> n) {
+        if (n == 0)
             break;
         m.clear();
-        for(i=0;i<n;i++){
-            cin>>s;
-            if(m.find(s)!=m.end()){
-                m[s]=m[s]+1;
-            } else
-            {
-                m[s]=1;
+        for (i = 0; i < n; i++) {
+            cin >> s;
+            if (m.find(s) != m.end()) {
+                m[s] = m[s] + 1;
+            } else {
+                m[s] = 1;
             }
         }
-        it2=m.begin();
-        for(it=m.begin();it!=m.end();it++){
-            if(it2->second<it->second){
-                it2=it;
+        it2 = m.begin();
+        for (it = m.begin(); it != m.end(); it++) {
+            if (it2->second < it->second) {
+                it2 = it;
             }
         }
-        cout<<it2->first<<endl;
+        cout << it2->first << endl;
     }
 
 }
+
 void Test::acm1392() {
     ifstream cin("../resources/acm1392.txt");
     string s;
     char ss[200];
-    map<char,char> m;
-    string s1="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string s2="VWXYZABCDEFGHIJKLMNOPQRSTU";
-    for(int i=0;i<s1.length();i++){
-        m[s1[i]]=s2[i];
+    map<char, char> m;
+    string s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string s2 = "VWXYZABCDEFGHIJKLMNOPQRSTU";
+    for (int i = 0; i < s1.length(); i++) {
+        m[s1[i]] = s2[i];
     }
-    while(cin.getline(ss,200)){
-        s=ss;
-        if(s=="START")
+    while (cin.getline(ss, 200)) {
+        s = ss;
+        if (s == "START")
             continue;
-        else if(s=="END")
+        else if (s == "END")
             continue;
-        else if(s=="ENDOFINPUT")
+        else if (s == "ENDOFINPUT")
             break;
-        else{
-            for(int i=0;i<s.size();i++){
-                if(s[i]>='A'&&s[i]<='Z'){
-                    cout<<m[s[i]];
-                }else{
-                    cout<<s[i];
+        else {
+            for (int i = 0; i < s.size(); i++) {
+                if (s[i] >= 'A' && s[i] <= 'Z') {
+                    cout << m[s[i]];
+                } else {
+                    cout << s[i];
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
     }
 }
+
 void Test::acm2417() {
     ifstream cin("../resources/acm2417.txt");
-    int n,num;
-    while(cin>>n){
-        num=0;
-        if(n==0)
+    int n, num;
+    while (cin >> n) {
+        num = 0;
+        if (n == 0)
             break;
-        while(n%2!=1){
+        while (n % 2 != 1) {
             num++;
-            n/=2;
+            n /= 2;
         }
-        cout<<pow(2.0,num)<<endl;
+        cout << pow(2.0, num) << endl;
     }
 }
+
 void Test::acm2060() {
     vector<unsigned int> v;
     ifstream cin("../resources/acm2060.txt");
-    unsigned int n1,n2,t;
+    unsigned int n1, n2, t;
     unsigned int n;
     int i;
-    n1=7;
-    n2=11;
+    n1 = 7;
+    n2 = 11;
     v.push_back(7);
     v.push_back(11);
-    for(i=2;i<=1000000;i++){
-        v.push_back(n1+n2);
-        t=n1+n2;
-        n1=n2;
-        n2=t;
+    for (i = 2; i <= 1000000; i++) {
+        v.push_back(n1 + n2);
+        t = n1 + n2;
+        n1 = n2;
+        n2 = t;
     }
-    while(cin>>n){
-        if(v[n]%3==0)
-            cout<<"yes"<<endl;
+    while (cin >> n) {
+        if (v[n] % 3 == 0)
+            cout << "yes" << endl;
         else
-            cout<<"no"<<endl;
+            cout << "no" << endl;
     }
 
 }
+
 void Test::acm2095() {
     int m[500000];
     ifstream cin("../resources/acm2095.txt");
-    int i,j;
+    int i, j;
     int n;
     int d;
-    d=sqrt(500000.0);
-    m[1]=0;
-    for(i=2;i<=500000;i++)
-        m[i]=1;
-    for(i=2;i<=d;i++){
-        m[i*i]+=i;
-        for(j=i+1;j<=(500000)/i;j++){
-            m[i*j]+=(i+j);
+    d = sqrt(500000.0);
+    m[1] = 0;
+    for (i = 2; i <= 500000; i++)
+        m[i] = 1;
+    for (i = 2; i <= d; i++) {
+        m[i * i] += i;
+        for (j = i + 1; j <= (500000) / i; j++) {
+            m[i * j] += (i + j);
         }
     }
-    cin>>n;
-    while(cin>>n){
-        printf("%d\n",m[n]);
+    cin >> n;
+    while (cin >> n) {
+        printf("%d\n", m[n]);
+    }
+
+}
+
+void Test::acm1115() {
+    string s;
+    ifstream cin("../resources/acm1115.txt");
+
+    while (cin >> s) {
+        if (s == "0")
+            break;
+        int sum = 0;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '1')
+                sum += 1;
+            else if (s[i] == '2')
+                sum += 2;
+            else if (s[i] == '3')
+                sum += 3;
+            else if (s[i] == '4')
+                sum += 4;
+            else if (s[i] == '5')
+                sum += 5;
+            else if (s[i] == '6')
+                sum += 6;
+            else if (s[i] == '7')
+                sum += 7;
+            else if (s[i] == '8')
+                sum += 8;
+            else if (s[i] == '9')
+                sum += 9;
+        }
+        while (1 == 1) {
+            if (sum < 10) {
+                printf("%d\n", sum);
+                break;
+            } else {
+                sum = sum / 10 + sum % 10;
+            }
+        }
     }
 
 }
