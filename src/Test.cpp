@@ -1819,3 +1819,65 @@ void Test::acm1115() {
     }
 
 }
+
+bool cmpBillInfo(const billInfo &a, const billInfo &b) {
+    if (a.average != b.average)
+        return a.average > b.average;
+}
+
+void Test::acm2679() {
+    ifstream cin("../resources/acm2679.txt");
+    billInfo info;
+    vector<billInfo> v;
+    int i, j;
+    int n;
+    int x, y, z, m;
+    cin >> n;
+    while (cin >> n) {
+        cin >> x >> y >> z;
+        m = x * 1000 + 100 * y + 10 * z;
+        v.clear();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if ((i * 10000 + m + j) % n == 0) {
+                    info.first = i;
+                    info.last = j;
+                    info.average = (i * 10000 + m + j) / n;
+                    v.push_back(info);
+                }
+            }
+
+        }
+        sort(v.begin(), v.end(), cmpBillInfo);
+        if (v.size() == 0)
+            cout << "0" << endl;
+        else
+            cout << v[0].first << " " << v[0].last << " " << v[0].average << endl;
+
+    }
+
+}
+
+void Test::acm2807() {
+    ifstream cin("../resources/acm2807.txt");
+    int n;
+    vector<int> v;
+    int i, num, sum;
+    cin >> n;
+    while (cin >> n) {
+        v.clear();
+        sum = 0;
+        for (int i = 0; i < n; i++) {
+            cin >> num;
+            v.push_back(num);
+        }
+        for (int i = 0; i < v.size(); i++) {
+            if (i != v.size() - 1)
+                sum += v[i] - 1;
+            else
+                sum += v[i];
+        }
+        cout << sum << endl;
+    }
+
+}

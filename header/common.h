@@ -102,3 +102,8 @@ struct Info{
     int week;
 };
 
+struct billInfo {
+    int first;
+    int last;
+    int average;
+};
